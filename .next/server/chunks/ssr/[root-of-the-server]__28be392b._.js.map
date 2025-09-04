@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 19, "column": 0}, "map": {"version":3,"sources":["file:///Users/karynayen/Desktop/kanbas-next-js/app/%28Kambaz%29/Account/Signup/page.tsx"],"sourcesContent":["import Link from \"next/link\";\nexport default function Signup() {\n  return (\n    <div id=\"wd-signup-screen\">\n      <h3>Sign up</h3>\n      <input placeholder=\"username\" className=\"wd-username\" /><br/>\n      <input placeholder=\"password\" type=\"password\" className=\"wd-password\" /><br/>\n      <input placeholder=\"verify password\"\n             type=\"password\" className=\"wd-password-verify\" /><br/>\n      <Link  href=\"Profile\" > Sign up </Link><br />\n      <Link  href=\"Signin\" > Sign in </Link>\n    </div>\n);}\n"],"names":[],"mappings":";;;;;AAAA;;;AACe,SAAS;IACtB,qBACE,iRAAC;QAAI,IAAG;;0BACN,iRAAC;0BAAG;;;;;;0BACJ,iRAAC;gBAAM,aAAY;gBAAW,WAAU;;;;;;0BAAgB,iRAAC;;;;;0BACzD,iRAAC;gBAAM,aAAY;gBAAW,MAAK;gBAAW,WAAU;;;;;;0BAAgB,iRAAC;;;;;0BACzE,iRAAC;gBAAM,aAAY;gBACZ,MAAK;gBAAW,WAAU;;;;;;0BAAuB,iRAAC;;;;;0BACzD,iRAAC,0MAAI;gBAAE,MAAK;0BAAW;;;;;;0BAAgB,iRAAC;;;;;0BACxC,iRAAC,0MAAI;gBAAE,MAAK;0BAAU;;;;;;;;;;;;AAE1B","debugId":null}}]
+}

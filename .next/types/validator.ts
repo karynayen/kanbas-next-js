@@ -36,16 +36,94 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 }
 
 
+// Validate ../../app/(Kambaz)/Account/Profile/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Account/Profile/page.js")
+  handler satisfies AppPageConfig<"/Account/Profile">
+}
+
+// Validate ../../app/(Kambaz)/Account/Signin/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Account/Signin/page.js")
+  handler satisfies AppPageConfig<"/Account/Signin">
+}
+
+// Validate ../../app/(Kambaz)/Account/Signup/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Account/Signup/page.js")
+  handler satisfies AppPageConfig<"/Account/Signup">
+}
+
+// Validate ../../app/(Kambaz)/Account/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Account/page.js")
+  handler satisfies AppPageConfig<"/Account">
+}
+
+// Validate ../../app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.js")
+  handler satisfies AppPageConfig<"/Courses/[cid]/Assignments/[aid]">
+}
+
+// Validate ../../app/(Kambaz)/Courses/[cid]/Assignments/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Courses/[cid]/Assignments/page.js")
+  handler satisfies AppPageConfig<"/Courses/[cid]/Assignments">
+}
+
+// Validate ../../app/(Kambaz)/Courses/[cid]/Home/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Courses/[cid]/Home/page.js")
+  handler satisfies AppPageConfig<"/Courses/[cid]/Home">
+}
+
+// Validate ../../app/(Kambaz)/Courses/[cid]/Modules/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Courses/[cid]/Modules/page.js")
+  handler satisfies AppPageConfig<"/Courses/[cid]/Modules">
+}
+
+// Validate ../../app/(Kambaz)/Courses/[cid]/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Courses/[cid]/page.js")
+  handler satisfies AppPageConfig<"/Courses/[cid]">
+}
+
+// Validate ../../app/(Kambaz)/Dashboard/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Dashboard/page.js")
+  handler satisfies AppPageConfig<"/Dashboard">
+}
+
+// Validate ../../app/(Kambaz)/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/page.js")
+  handler satisfies AppPageConfig<"/">
+}
+
 // Validate ../../app/Labs/Lab1/page.tsx
 {
   const handler = {} as typeof import("../../app/Labs/Lab1/page.js")
   handler satisfies AppPageConfig<"/Labs/Lab1">
 }
 
-// Validate ../../app/page.tsx
+// Validate ../../app/Labs/Lab2/page.tsx
 {
-  const handler = {} as typeof import("../../app/page.js")
-  handler satisfies AppPageConfig<"/">
+  const handler = {} as typeof import("../../app/Labs/Lab2/page.js")
+  handler satisfies AppPageConfig<"/Labs/Lab2">
+}
+
+// Validate ../../app/Labs/Lab3/page.tsx
+{
+  const handler = {} as typeof import("../../app/Labs/Lab3/page.js")
+  handler satisfies AppPageConfig<"/Labs/Lab3">
+}
+
+// Validate ../../app/Labs/page.tsx
+{
+  const handler = {} as typeof import("../../app/Labs/page.js")
+  handler satisfies AppPageConfig<"/Labs">
 }
 
 
@@ -53,6 +131,30 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 
 
 
+
+// Validate ../../app/(Kambaz)/Account/layout.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Account/layout.js")
+  handler satisfies LayoutConfig<"/Account">
+}
+
+// Validate ../../app/(Kambaz)/Courses/[cid]/layout.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Courses/[cid]/layout.js")
+  handler satisfies LayoutConfig<"/Courses/[cid]">
+}
+
+// Validate ../../app/(Kambaz)/layout.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/layout.js")
+  handler satisfies LayoutConfig<"/">
+}
+
+// Validate ../../app/Labs/layout.tsx
+{
+  const handler = {} as typeof import("../../app/Labs/layout.js")
+  handler satisfies LayoutConfig<"/Labs">
+}
 
 // Validate ../../app/layout.tsx
 {
