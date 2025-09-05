@@ -8,8 +8,8 @@ export default function Modules() {
             <button type="button"
                     id="wd-in-progress">In Progress</button>
             &nbsp;
-            <select id="wd-select-one-genre">
-                <option selected value="PUBLISH-ALL">Publish All</option>
+            <select id="wd-select-one-genre" defaultValue="PUBLISH-ALL">
+                <option value="PUBLISH-ALL">Publish All</option>
                 <option value="PUBLISH-MOD-ITEMS">Publish All Modules and Items</option>
                 <option value="PUBLISH-ONLY-MODULES">Publish Modules Only</option>
             </select>
