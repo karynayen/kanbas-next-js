@@ -3,5 +3,5 @@
   "sources": [],
   "sections": [
     {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["file:///Users/karynayen/Desktop/kanbas-next-js/app/%28Kambaz%29/Courses/%5Bcid%5D/page.tsx"],"sourcesContent":["import { redirect } from \"next/navigation\";\n\n\nexport default async function CoursesPage({ params, }: { params: Promise<{ cid: string }>; }) {\n const { cid } = await params;\n redirect(`/Courses/${cid}/Home`);\n}\n"],"names":[],"mappings":";;;;AAAA;AAAA;;AAGe,eAAe,YAAY,EAAE,MAAM,EAA0C;IAC3F,MAAM,EAAE,GAAG,EAAE,GAAG,MAAM;IACtB,IAAA,oOAAQ,EAAC,CAAC,SAAS,EAAE,IAAI,KAAK,CAAC;AAChC","debugId":null}}]
+    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["file:///Users/karynayen/Desktop/kanbas-next-js/app/%28Kambaz%29/Courses/%5Bcid%5D/page.tsx"],"sourcesContent":["import { redirect } from \"next/navigation\";\n\n\nexport default async function CoursesPage({ params, }: { params: Promise<{ id: string }>; }) {\n const { cid } = await params;\n redirect(`/Courses/${cid}/Home`);\n}\n"],"names":[],"mappings":";;;;AAAA;AAAA;;AAGe,eAAe,YAAY,EAAE,MAAM,EAA0C;IAC3F,MAAM,EAAE,GAAG,EAAE,GAAG,MAAM;IACtB,IAAA,oOAAQ,EAAC,CAAC,SAAS,EAAE,IAAI,KAAK,CAAC;AAChC","debugId":null}}]
 }
