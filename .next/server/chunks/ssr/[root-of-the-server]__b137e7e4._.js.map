@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///Users/karynayen/Desktop/kanbas-next-js/app/Labs/page.tsx"],"sourcesContent":["import Link from \"next/link\";\nexport default function Labs() {\n return (\n   <div id=\"wd-labs\">\n     <h1>Labs</h1>\n     <ul>\n       <li>\n         <Link href=\"/Labs/Lab1\" id=\"wd-lab1-link\">\n           Lab 1: HTML Examples </Link>\n       </li>\n       <li>\n         <Link href=\"/Labs/Lab2\" id=\"wd-lab2-link\">\n           Lab 2: CSS Basics </Link>\n       </li>\n       <li>\n         <Link href=\"/Labs/Lab3\" id=\"wd-lab3-link\">\n           Lab 3: JavaScript Fundamentals </Link>\n       </li>\n     </ul>\n   </div>\n);}\n"],"names":[],"mappings":";;;;;AAAA;;;AACe,SAAS;IACvB,qBACE,iRAAC;QAAI,IAAG;;0BACN,iRAAC;0BAAG;;;;;;0BACJ,iRAAC;;kCACC,iRAAC;kCACC,cAAA,iRAAC,0MAAI;4BAAC,MAAK;4BAAa,IAAG;sCAAe;;;;;;;;;;;kCAG5C,iRAAC;kCACC,cAAA,iRAAC,0MAAI;4BAAC,MAAK;4BAAa,IAAG;sCAAe;;;;;;;;;;;kCAG5C,iRAAC;kCACC,cAAA,iRAAC,0MAAI;4BAAC,MAAK;4BAAa,IAAG;sCAAe;;;;;;;;;;;;;;;;;;;;;;;AAKjD","debugId":null}}]
+}
