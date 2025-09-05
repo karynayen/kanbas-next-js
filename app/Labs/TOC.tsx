@@ -2,6 +2,7 @@ import Link from "next/link";
 export default function TOC() {
  return (
    <ul>
+    <Link href="https://github.com/karynayen/kanbas-next-js" id="wd-github">GitHub</Link>
      <li>
        <Link href="/Labs" id="wd-lab1-link">
          Home </Link>

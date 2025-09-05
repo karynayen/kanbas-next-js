@@ -36,6 +36,13 @@ function Labs() {
                 lineNumber: 5,
                 columnNumber: 6
             }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                children: "Karyna Yen"
+            }, void 0, false, {
+                fileName: "[project]/Desktop/kanbas-next-js/app/Labs/page.tsx",
+                lineNumber: 6,
+                columnNumber: 6
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -45,12 +52,12 @@ function Labs() {
                             children: "Lab 1: HTML Examples "
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/Labs/page.tsx",
-                            lineNumber: 8,
+                            lineNumber: 9,
                             columnNumber: 10
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/kanbas-next-js/app/Labs/page.tsx",
-                        lineNumber: 7,
+                        lineNumber: 8,
                         columnNumber: 8
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -60,12 +67,12 @@ function Labs() {
                             children: "Lab 2: CSS Basics "
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/Labs/page.tsx",
-                            lineNumber: 12,
+                            lineNumber: 13,
                             columnNumber: 10
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/kanbas-next-js/app/Labs/page.tsx",
-                        lineNumber: 11,
+                        lineNumber: 12,
                         columnNumber: 8
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -75,18 +82,18 @@ function Labs() {
                             children: "Lab 3: JavaScript Fundamentals "
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/Labs/page.tsx",
-                            lineNumber: 16,
+                            lineNumber: 17,
                             columnNumber: 10
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/kanbas-next-js/app/Labs/page.tsx",
-                        lineNumber: 15,
+                        lineNumber: 16,
                         columnNumber: 8
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/Labs/page.tsx",
-                lineNumber: 6,
+                lineNumber: 7,
                 columnNumber: 6
             }, this)
         ]

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 19, "column": 0}, "map": {"version":3,"sources":["file:///Users/karynayen/Desktop/kanbas-next-js/app/Labs/Lab3/page.tsx"],"sourcesContent":["export default function Lab3() {\n    return (\n      <div>\n        <h2>Lab 3</h2>\n      </div>\n  );\n}\n  "],"names":[],"mappings":";;;;;;AAAe,SAAS;IACpB,qBACE,iRAAC;kBACC,cAAA,iRAAC;sBAAG;;;;;;;;;;;AAGZ","debugId":null}}]
+}

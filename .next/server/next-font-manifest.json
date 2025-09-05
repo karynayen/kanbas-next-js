@@ -1,62 +1,18 @@
 {
   "app": {
-    "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Profile/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Signin/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Signup/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Home/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/kanbas-next-js/app/(Kambaz)/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
     "[project]/Desktop/kanbas-next-js/app/Labs/Lab1/page": [
       "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2"
     ],
+    "[project]/Desktop/kanbas-next-js/app/Labs/Lab2/page": [
+      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/Desktop/kanbas-next-js/app/Labs/Lab3/page": [
+      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
     "[project]/Desktop/kanbas-next-js/app/Labs/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/kanbas-next-js/app/_not-found/page": [
-      "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/kanbas-next-js/app/page": [
       "static/media/caa3a2e1cccd8315-s.p.6435ea53.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2"
     ]
