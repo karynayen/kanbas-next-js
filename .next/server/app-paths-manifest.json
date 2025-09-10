@@ -13,5 +13,5 @@
   "/Labs/Lab2/page": "app/Labs/Lab2/page.js",
   "/Labs/Lab3/page": "app/Labs/Lab3/page.js",
   "/Labs/page": "app/Labs/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/_not-found/page": "app/_not-found/page.js"
 }
