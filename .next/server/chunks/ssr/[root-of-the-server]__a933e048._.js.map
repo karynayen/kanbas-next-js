@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["file:///Users/kyen/Desktop/kanbas-next-js/app/%28Kambaz%29/Account/page.tsx"],"sourcesContent":["import { redirect } from \"next/dist/client/components/navigation\";\n\n\nexport default function AccountPage() {\n redirect(\"/Account/Signin\");\n}\n"],"names":[],"mappings":";;;;AAAA;;AAGe,SAAS;IACvB,IAAA,8KAAQ,EAAC;AACV","debugId":null}}]
+}

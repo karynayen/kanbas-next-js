@@ -1,19 +1,6 @@
 {
-  "/(Kambaz)/Account/Profile/page": "app/(Kambaz)/Account/Profile/page.js",
-  "/(Kambaz)/Account/Signin/page": "app/(Kambaz)/Account/Signin/page.js",
-  "/(Kambaz)/Account/Signup/page": "app/(Kambaz)/Account/Signup/page.js",
-  "/(Kambaz)/Account/page": "app/(Kambaz)/Account/page.js",
   "/(Kambaz)/Courses/[cid]/Assignments/[aid]/page": "app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.js",
   "/(Kambaz)/Courses/[cid]/Assignments/page": "app/(Kambaz)/Courses/[cid]/Assignments/page.js",
-  "/(Kambaz)/Courses/[cid]/Home/page": "app/(Kambaz)/Courses/[cid]/Home/page.js",
   "/(Kambaz)/Courses/[cid]/Modules/page": "app/(Kambaz)/Courses/[cid]/Modules/page.js",
-  "/(Kambaz)/Courses/[cid]/page": "app/(Kambaz)/Courses/[cid]/page.js",
-  "/(Kambaz)/Dashboard/page": "app/(Kambaz)/Dashboard/page.js",
-  "/(Kambaz)/page": "app/(Kambaz)/page.js",
-  "/Labs/Lab1/page": "app/Labs/Lab1/page.js",
-  "/Labs/Lab2/page": "app/Labs/Lab2/page.js",
-  "/Labs/Lab3/page": "app/Labs/Lab3/page.js",
-  "/Labs/page": "app/Labs/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }
