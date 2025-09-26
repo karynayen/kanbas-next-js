@@ -50,9 +50,14 @@ body * {
   border-color: rgba(0, 0, 0, .1) !important;
 }
 
-.wd-header-action {
-  border-color: #cfd4d8 !important;
-  border-radius: .25rem !important;
+#wd-assignments-editor input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+#wd-assignments-editor input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .wd-assignment-list-item {

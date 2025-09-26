@@ -41,9 +41,9 @@ body * {
 }
 
 .wd-assignments-header {
-  background-color: #e9ecef; /* darker gray than .bg-secondary used */
+  background-color: #e9ecef;
   border: 1px solid rgba(0,0,0,0.1);
-  border-bottom: none; /* flush with first white item */
+  border-bottom: none;
 }
 
 .wd-header-pill {
@@ -51,12 +51,15 @@ body * {
   border-color: rgba(0,0,0,0.1) !important;
 }
 
-.wd-header-action {
-  border-color: #cfd4d8 !important; /* slightly darker border */
-  border-radius: 0.25rem !important; /* reduce rounding */
+/* Hide native date picker icons inside the assignment editor so only the appended icon shows */
+#wd-assignments-editor input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+#wd-assignments-editor input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
 }
 
-/* Lighter borders just for assignment rows */
 .wd-assignment-list-item {
   --bs-list-group-border-color: #e6e9ec;
 }
