@@ -1,5 +1,6 @@
 {
   "/(Kambaz)/Account/Signin/page": "app/(Kambaz)/Account/Signin/page.js",
+  "/(Kambaz)/Courses/[cid]/Assignments/[aid]/page": "app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.js",
   "/(Kambaz)/Courses/[cid]/Assignments/page": "app/(Kambaz)/Courses/[cid]/Assignments/page.js",
   "/(Kambaz)/Courses/[cid]/Home/page": "app/(Kambaz)/Courses/[cid]/Home/page.js",
   "/(Kambaz)/Courses/[cid]/Modules/page": "app/(Kambaz)/Courses/[cid]/Modules/page.js",

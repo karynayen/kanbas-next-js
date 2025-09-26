@@ -30,8 +30,33 @@ body * {
   --bs-secondary-rgb: 199, 205, 209;
 }
 .list-group-item {
-  --bs-list-group-border-color: gray;
+  --bs-list-group-border-color: #dee2e6;
 }
 .wd-lesson {
   border-left: 3px solid green !important;
+}
+
+.wd-assignment {
+  border-left: 3px solid green !important;
+}
+
+.wd-assignments-header {
+  background-color: #e9ecef; /* darker gray than .bg-secondary used */
+  border: 1px solid rgba(0,0,0,0.1);
+  border-bottom: none; /* flush with first white item */
+}
+
+.wd-header-pill {
+  background-color: #e9ecef !important;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+
+.wd-header-action {
+  border-color: #cfd4d8 !important; /* slightly darker border */
+  border-radius: 0.25rem !important; /* reduce rounding */
+}
+
+/* Lighter borders just for assignment rows */
+.wd-assignment-list-item {
+  --bs-list-group-border-color: #e6e9ec;
 }

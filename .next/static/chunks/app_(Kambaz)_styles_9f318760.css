@@ -32,11 +32,31 @@ body * {
 }
 
 .list-group-item {
-  --bs-list-group-border-color: gray;
+  --bs-list-group-border-color: #dee2e6;
 }
 
-.wd-lesson {
+.wd-lesson, .wd-assignment {
   border-left: 3px solid green !important;
+}
+
+.wd-assignments-header {
+  background-color: #e9ecef;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-bottom: none;
+}
+
+.wd-header-pill {
+  background-color: #e9ecef !important;
+  border-color: rgba(0, 0, 0, .1) !important;
+}
+
+.wd-header-action {
+  border-color: #cfd4d8 !important;
+  border-radius: .25rem !important;
+}
+
+.wd-assignment-list-item {
+  --bs-list-group-border-color: #e6e9ec;
 }
 
 /*# sourceMappingURL=app_%28Kambaz%29_styles_9f318760.css.map*/
