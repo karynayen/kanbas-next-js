@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 19, "column": 0}, "map": {"version":3,"sources":["file:///Users/karynayen/Desktop/kanbas-next-js/app/%28Kambaz%29/Courses/%5Bcid%5D/page.tsx"],"sourcesContent":["export default function Courses() {\n    return (\n      <div id=\"wd-courses\">\n        <h2>Course 1234</h2>\n      </div>\n  );}\n  "],"names":[],"mappings":";;;;;;AAAe,SAAS;IACpB,qBACE,iRAAC;QAAI,IAAG;kBACN,cAAA,iRAAC;sBAAG;;;;;;;;;;;AAER","debugId":null}}]
-}
