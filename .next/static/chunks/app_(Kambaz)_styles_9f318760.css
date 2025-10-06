@@ -50,11 +50,11 @@ body * {
   border-color: rgba(0, 0, 0, .1) !important;
 }
 
-#wd-assignments-editor input[type="date"]::-webkit-calendar-picker-indicator {
+#wd-assignments-editor input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   display: none;
 }
 
-#wd-assignments-editor input[type="date"] {
+#wd-assignments-editor input[type="datetime-local"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

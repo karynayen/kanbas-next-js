@@ -52,10 +52,10 @@ body * {
 }
 
 /* Hide native date picker icons inside the assignment editor so only the appended icon shows */
-#wd-assignments-editor input[type="date"]::-webkit-calendar-picker-indicator {
+#wd-assignments-editor input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   display: none;
 }
-#wd-assignments-editor input[type="date"] {
+#wd-assignments-editor input[type="datetime-local"] {
   appearance: none;
   -webkit-appearance: none;
 }
