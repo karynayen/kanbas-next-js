@@ -19,7 +19,7 @@ export default async function CoursesLayout({
       <hr />
       <div className="d-flex">
         <div className="d-none d-md-block">
-          <CourseNavigation />
+          <CourseNavigation cid={cid} />
         </div>
         <div className="flex-fill">{children}</div>
       </div>

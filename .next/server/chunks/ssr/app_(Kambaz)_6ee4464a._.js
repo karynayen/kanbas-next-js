@@ -8,10 +8,25 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$api$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/next/dist/api/navigation.react-server.js [app-rsc] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/components/navigation.react-server.js [app-rsc] (ecmascript)");
 ;
 ;
 ;
-function CourseNavigation() {
+;
+function CourseNavigation({ cid }) {
+    const links = [
+        'Home',
+        'Modules',
+        'Piazza',
+        'Zoom',
+        'Assignments',
+        'Quizzes',
+        'Grades',
+        'People'
+    ];
+    const { a } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["useParams"])();
+    console.log(a);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         id: "wd-courses-navigation",
         className: "list-group wd fs-5 rounded-0",
@@ -20,86 +35,118 @@ function CourseNavigation() {
                 href: "/Courses/1234/Home",
                 id: "wd-course-home-link",
                 className: "list-group-item active border-0",
-                children: " Home "
-            }, void 0, false, {
+                children: [
+                    ' ',
+                    "Home",
+                    ' '
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Navigation.tsx",
-                lineNumber: 7,
+                lineNumber: 21,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                 href: "/Courses/1234/Modules",
                 id: "wd-course-modules-link",
                 className: "list-group-item text-danger border-0",
-                children: " Modules "
-            }, void 0, false, {
+                children: [
+                    ' ',
+                    "Modules",
+                    ' '
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Navigation.tsx",
-                lineNumber: 9,
+                lineNumber: 29,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                 href: "https://piazza.com/class/mf1li76n4is6m/post/173",
                 id: "wd-course-piazza-link",
                 className: "list-group-item text-danger border-0",
-                children: " Piazza "
-            }, void 0, false, {
+                children: [
+                    ' ',
+                    "Piazza",
+                    ' '
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Navigation.tsx",
-                lineNumber: 11,
+                lineNumber: 37,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                 href: "https://www.zoom.com/",
                 id: "wd-course-zoom-link",
                 className: "list-group-item text-danger border-0",
-                children: " Zoom "
-            }, void 0, false, {
+                children: [
+                    ' ',
+                    "Zoom",
+                    ' '
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Navigation.tsx",
-                lineNumber: 13,
+                lineNumber: 45,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                 href: "/Courses/1234/Assignments",
                 id: "wd-course-assignments-link",
                 className: "list-group-item text-danger border-0",
-                children: " Assignments "
-            }, void 0, false, {
+                children: [
+                    ' ',
+                    "Assignments",
+                    ' '
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Navigation.tsx",
-                lineNumber: 15,
+                lineNumber: 53,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                 href: "/Courses/1234/Quizzes",
                 id: "wd-course-quizzes-link",
                 className: "list-group-item text-danger border-0",
-                children: " Quizzes "
-            }, void 0, false, {
+                children: [
+                    ' ',
+                    "Quizzes",
+                    ' '
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Navigation.tsx",
-                lineNumber: 17,
+                lineNumber: 61,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                 href: "/Courses/1234/Grades",
                 id: "wd-course-grades-link",
                 className: "list-group-item text-danger border-0",
-                children: " Grades "
-            }, void 0, false, {
+                children: [
+                    ' ',
+                    "Grades",
+                    ' '
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Navigation.tsx",
-                lineNumber: 19,
+                lineNumber: 69,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                 href: "/Courses/1234/People/Table",
                 id: "wd-course-people-link",
                 className: "list-group-item text-danger bordeçr-0",
-                children: " People "
-            }, void 0, false, {
+                children: [
+                    ' ',
+                    "People",
+                    ' '
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Navigation.tsx",
-                lineNumber: 21,
+                lineNumber: 77,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Navigation.tsx",
-        lineNumber: 6,
+        lineNumber: 20,
         columnNumber: 5
     }, this);
 }
@@ -174,7 +221,9 @@ async function CoursesLayout({ children, params }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "d-none d-md-block",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Navigation$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Navigation$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                            cid: cid
+                        }, void 0, false, {
                             fileName: "[project]/app/(Kambaz)/Courses/[cid]/layout.tsx",
                             lineNumber: 22,
                             columnNumber: 11
