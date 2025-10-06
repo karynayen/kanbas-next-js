@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/kyen/Desktop/kanbas-next-js/app/Labs/Lab3/add/%5Ba%5D/%5Bb%5D/page.tsx"],"sourcesContent":["'use client';\nimport { useParams } from 'next/navigation';\nexport default function AddPathParameters() {\n  const { a, b } = useParams();\n  return (\n    <div id=\"wd-add\">\n      {' '}\n      <h4>Add Path Parameters</h4>\n      {a} + {b} = {parseInt(a as string) + parseInt(b as string)}\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;AACA;AADA;;;AAEe,SAAS;IACtB,MAAM,EAAE,CAAC,EAAE,CAAC,EAAE,GAAG,IAAA,+IAAS;IAC1B,qBACE,8OAAC;QAAI,IAAG;;YACL;0BACD,8OAAC;0BAAG;;;;;;YACH;YAAE;YAAI;YAAE;YAAI,SAAS,KAAe,SAAS;;;;;;;AAGpD","debugId":null}}]
+}
