@@ -10,7 +10,7 @@ R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-e
 R.c("server/chunks/ssr/app_(Kambaz)_3cdf38ca._.js")
 R.c("server/chunks/ssr/node_modules_react-icons_fa_index_mjs_8e3a79ec._.js")
 R.c("server/chunks/ssr/node_modules_react-icons_lib_2ebb85a8._.js")
-R.c("server/chunks/ssr/app_(Kambaz)_c2ee5903._.js")
+R.c("server/chunks/ssr/app_(Kambaz)_7556e1a0._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_a6046200._.js")
 R.c("server/chunks/ssr/node_modules_react-icons_md_index_mjs_333b8024._.js")
 R.c("server/chunks/ssr/node_modules_react-icons_bi_index_mjs_54b4c732._.js")

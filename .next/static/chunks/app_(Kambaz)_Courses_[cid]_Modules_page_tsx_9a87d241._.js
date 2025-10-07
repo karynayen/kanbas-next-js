@@ -5,7 +5,7 @@
   "static/chunks/node_modules_react-icons_fa_index_mjs_0459ff00._.js",
   "static/chunks/node_modules_react-icons_bs_index_mjs_8a44a60a._.js",
   "static/chunks/node_modules_93d3b5a4._.js",
-  "static/chunks/app_(Kambaz)_64430bf6._.js"
+  "static/chunks/app_(Kambaz)_4e3e0bbb._.js"
 ],
     source: "dynamic"
 });

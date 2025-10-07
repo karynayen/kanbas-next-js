@@ -10,7 +10,7 @@ R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-e
 R.c("server/chunks/ssr/app_(Kambaz)_3cdf38ca._.js")
 R.c("server/chunks/ssr/node_modules_react-icons_fa_index_mjs_8e3a79ec._.js")
 R.c("server/chunks/ssr/node_modules_react-icons_lib_2ebb85a8._.js")
-R.c("server/chunks/ssr/app_(Kambaz)_c01c5fa5._.js")
+R.c("server/chunks/ssr/app_(Kambaz)_7556e1a0._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_caf5d993._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__1356980a._.js")
 R.m("[project]/.next-internal/server/app/(Kambaz)/Courses/[cid]/Grades/page/actions.js [app-rsc] (server actions loader, ecmascript)")
