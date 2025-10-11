@@ -51,14 +51,6 @@ body * {
   border-color: rgba(0,0,0,0.1) !important;
 }
 
-/* Hide native date picker icons inside the assignment editor so only the appended icon shows */
-#wd-assignments-editor input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-  display: none;
-}
-#wd-assignments-editor input[type="datetime-local"] {
-  appearance: none;
-  -webkit-appearance: none;
-}
 
 .wd-assignment-list-item {
   --bs-list-group-border-color: #e6e9ec;

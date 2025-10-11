@@ -50,16 +50,6 @@ body * {
   border-color: rgba(0, 0, 0, .1) !important;
 }
 
-#wd-assignments-editor input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-  display: none;
-}
-
-#wd-assignments-editor input[type="datetime-local"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
 .wd-assignment-list-item {
   --bs-list-group-border-color: #e6e9ec;
 }
