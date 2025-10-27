@@ -5,7 +5,7 @@
   "static/chunks/node_modules_@popperjs_core_lib_9f9ea9db._.js",
   "static/chunks/node_modules_react-icons_bs_index_mjs_8a44a60a._.js",
   "static/chunks/node_modules_e41f0feb._.js",
-  "static/chunks/app_(Kambaz)_877e5daf._.js"
+  "static/chunks/app_(Kambaz)_Courses_[cid]_Modules_5aea5bc8._.js"
 ],
     source: "dynamic"
 });
