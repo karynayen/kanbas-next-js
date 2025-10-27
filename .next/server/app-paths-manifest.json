@@ -1,6 +1,13 @@
 {
   "/(Kambaz)/Account/Signin/page": "app/(Kambaz)/Account/Signin/page.js",
+  "/(Kambaz)/Courses/[cid]/Assignments/page": "app/(Kambaz)/Courses/[cid]/Assignments/page.js",
+  "/(Kambaz)/Courses/[cid]/Grades/page": "app/(Kambaz)/Courses/[cid]/Grades/page.js",
   "/(Kambaz)/Courses/[cid]/Home/page": "app/(Kambaz)/Courses/[cid]/Home/page.js",
+  "/(Kambaz)/Courses/[cid]/Modules/page": "app/(Kambaz)/Courses/[cid]/Modules/page.js",
+  "/(Kambaz)/Courses/[cid]/People/Table/page": "app/(Kambaz)/Courses/[cid]/People/Table/page.js",
+  "/(Kambaz)/Courses/[cid]/Piazza/page": "app/(Kambaz)/Courses/[cid]/Piazza/page.js",
+  "/(Kambaz)/Courses/[cid]/Quizzes/page": "app/(Kambaz)/Courses/[cid]/Quizzes/page.js",
+  "/(Kambaz)/Courses/[cid]/Zoom/page": "app/(Kambaz)/Courses/[cid]/Zoom/page.js",
   "/(Kambaz)/Dashboard/page": "app/(Kambaz)/Dashboard/page.js",
   "/(Kambaz)/page": "app/(Kambaz)/page.js",
   "/Labs/Lab4/page": "app/Labs/Lab4/page.js",

@@ -14,9 +14,14 @@ import {
   FormControl,
 } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
+import { useDispatch, useSelector } from 'react-redux';
+import { addNewCourse, deleteCourse, updateCourse } from '../Courses/reducer';
+
 export default function Dashboard() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [courses, setCourses] = useState<any[]>(db.courses);
+  const { courses } = useSelector((state: any) => state.coursesReducer);
+  const dispatch = useDispatch();
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [course, setCourse] = useState<any>({
     _id: '0',
@@ -27,24 +32,6 @@ export default function Dashboard() {
     image: '/images/reactjs.jpg',
     description: 'New Description',
   });
-  const addNewCourse = () => {
-    const newCourse = { ...course, _id: uuidv4() };
-    setCourses([...courses, newCourse]);
-  };
-  const deleteCourse = (courseId: string) => {
-    setCourses(courses.filter((course) => course._id !== courseId));
-  };
-  const updateCourse = () => {
-    setCourses(
-      courses.map((c) => {
-        if (c._id === course._id) {
-          return course;
-        } else {
-          return c;
-        }
-      })
-    );
-  };
 
   return (
     <div id="wd-dashboard">
@@ -54,14 +41,14 @@ export default function Dashboard() {
         <button
           className="btn btn-primary float-end"
           id="wd-add-new-course-click"
-          onClick={addNewCourse}
+          onClick={() => dispatch(addNewCourse(course))}
         >
           {' '}
           Add{' '}
         </button>
         <button
           className="btn btn-warning float-end me-2"
-          onClick={updateCourse}
+          onClick={() => dispatch(updateCourse(course))}
           id="wd-update-course-click"
         >
           Update{' '}
@@ -86,7 +73,8 @@ export default function Dashboard() {
       <hr />
       <div id="wd-dashboard-courses">
         <Row xs={1} md={5} className="g-4">
-          {courses.map((course) => (
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+          {courses.map((course: any) => (
             <Col
               key={course._id}
               className="wd-dashboard-course"
@@ -117,7 +105,7 @@ export default function Dashboard() {
                     <button
                       onClick={(event) => {
                         event.preventDefault();
-                        deleteCourse(course._id);
+                        dispatch(deleteCourse(course._id));
                       }}
                       className="btn btn-danger float-end"
                       id="wd-delete-course-click"

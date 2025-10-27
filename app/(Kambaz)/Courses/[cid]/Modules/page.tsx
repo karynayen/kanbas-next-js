@@ -1,18 +1,37 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
+import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import * as db from '../../../Database';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
-import ModulesControls from './ModuleControls';
+import ModulesControls from './ModulesControls';
 import { BsGripVertical } from 'react-icons/bs';
 import LessonControlButtons from './LessonControlButtons';
+import ModuleControlButtons from './ModuleControlButtons';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Modules() {
   const { cid } = useParams();
-  const modules = db.modules;
+  const [modules, setModules] = useState<any[]>(db.modules);
+  const [moduleName, setModuleName] = useState('');
+  const addModule = () => {
+    setModules([
+      ...modules,
+      { _id: uuidv4(), name: moduleName, course: cid, lessons: [] },
+    ]);
+    setModuleName('');
+  };
+  const deleteModule = (moduleId: string) => {
+    setModules(modules.filter((m) => m._id !== moduleId));
+  };
+
   return (
     <div>
-      <ModulesControls />
+      <ModulesControls
+        setModuleName={setModuleName}
+        moduleName={moduleName}
+        addModule={addModule}
+      />
       <br />
       <br />
       <br />
@@ -27,7 +46,10 @@ export default function Modules() {
             >
               <div className="wd-title p-3 ps-2 bg-secondary">
                 <BsGripVertical className="me-2 fs-3" /> {module.name}{' '}
-                <ModulesControls />
+                <ModuleControlButtons
+                  moduleId={module._id}
+                  deleteModule={deleteModule}
+                />
               </div>
               {module.lessons && (
                 <ListGroup className="wd-lessons rounded-0">
