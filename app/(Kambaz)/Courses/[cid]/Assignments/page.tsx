@@ -7,7 +7,7 @@ import {
   InputGroup,
   Form,
 } from 'react-bootstrap';
-import { FaPlus } from 'react-icons/fa6';
+import { FaPlus, FaTrash } from 'react-icons/fa6';
 import { FaSearch } from 'react-icons/fa';
 import { IoNewspaperOutline } from 'react-icons/io5';
 import {
@@ -17,7 +17,8 @@ import {
 } from 'react-icons/bs';
 import GreenCheckmark from '../Modules/GreenCheckmark';
 import { useParams } from 'next/navigation';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteAssignment } from './reducer';
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
@@ -30,12 +31,36 @@ const formatDate = (dateString: string) => {
   });
 };
 
+interface Assignment {
+  _id: string;
+  title: string;
+  course: string;
+  description: string;
+  points: number;
+  dueDate: string;
+  availableFromDate: string;
+  availableUntilDate: string;
+}
+
 export default function Assignments() {
   const { cid } = useParams();
-  const { assignments } = useSelector((state: any) => state.assignmentsReducer);
-  const courseAssignments = assignments.filter(
-    (assignment: any) => assignment.course === cid
+  const dispatch = useDispatch();
+  const { assignments } = useSelector(
+    (state: { assignmentsReducer: { assignments: Assignment[] } }) =>
+      state.assignmentsReducer
   );
+  const courseAssignments = assignments.filter(
+    (assignment) => assignment.course === cid
+  );
+
+  const handleDelete = (assignmentId: string, assignmentTitle: string) => {
+    const confirmed = window.confirm(
+      `Are you sure you want to remove the assignment "${assignmentTitle}"?`
+    );
+    if (confirmed) {
+      dispatch(deleteAssignment(assignmentId));
+    }
+  };
 
   return (
     <div id="wd-assignments">
@@ -104,7 +129,7 @@ export default function Assignments() {
       </div>
 
       <ListGroup id="wd-assignment-list" className="rounded-0">
-        {courseAssignments.map((assignment: any) => (
+        {courseAssignments.map((assignment) => (
           <ListGroupItem
             key={assignment._id}
             className="wd-assignment-list-item wd-assignment p-3 ps-2 d-flex align-items-center border-gray"
@@ -127,6 +152,11 @@ export default function Assignments() {
               </div>
             </div>
             <div className="ms-2 d-flex align-items-center">
+              <FaTrash
+                className="text-danger me-2"
+                style={{ cursor: 'pointer' }}
+                onClick={() => handleDelete(assignment._id, assignment.title)}
+              />
               <GreenCheckmark />
               <BsThreeDotsVertical className="ms-2 text-secondary" />
             </div>
