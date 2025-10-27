@@ -168,6 +168,24 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   handler satisfies AppPageConfig<"/Labs/Lab3">
 }
 
+// Validate ../../app/Labs/Lab4/ReduxExamples/AddRedux/page.tsx
+{
+  const handler = {} as typeof import("../../app/Labs/Lab4/ReduxExamples/AddRedux/page.js")
+  handler satisfies AppPageConfig<"/Labs/Lab4/ReduxExamples/AddRedux">
+}
+
+// Validate ../../app/Labs/Lab4/ReduxExamples/CounterRedux/page.tsx
+{
+  const handler = {} as typeof import("../../app/Labs/Lab4/ReduxExamples/CounterRedux/page.js")
+  handler satisfies AppPageConfig<"/Labs/Lab4/ReduxExamples/CounterRedux">
+}
+
+// Validate ../../app/Labs/Lab4/ReduxExamples/HelloRedux/page.tsx
+{
+  const handler = {} as typeof import("../../app/Labs/Lab4/ReduxExamples/HelloRedux/page.js")
+  handler satisfies AppPageConfig<"/Labs/Lab4/ReduxExamples/HelloRedux">
+}
+
 // Validate ../../app/Labs/Lab4/ReduxExamples/page.tsx
 {
   const handler = {} as typeof import("../../app/Labs/Lab4/ReduxExamples/page.js")
@@ -178,6 +196,12 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 {
   const handler = {} as typeof import("../../app/Labs/Lab4/page.js")
   handler satisfies AppPageConfig<"/Labs/Lab4">
+}
+
+// Validate ../../app/Labs/Lab4/store/page.ts
+{
+  const handler = {} as typeof import("../../app/Labs/Lab4/store/page.js")
+  handler satisfies AppPageConfig<"/Labs/Lab4/store">
 }
 
 // Validate ../../app/Labs/page.tsx
