@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/kyen/Desktop/kanbas-next-js/app/%28Kambaz%29/Account/page.tsx"],"sourcesContent":["/* eslint-disable @typescript-eslint/no-explicit-any */\n'use client';\nimport { useSelector } from 'react-redux';\nimport { redirect } from 'next/dist/client/components/navigation';\n\nexport default function AccountPage() {\n  const { currentUser } = useSelector((state: any) => state.accountReducer);\n  if (!currentUser) {\n    redirect('/Account/Signin');\n  } else {\n    redirect('/Account/Profile');\n  }\n}\n"],"names":[],"mappings":"AAAA,qDAAqD;;;;AAErD;AACA;AAFA;;;AAIe,SAAS;IACtB,MAAM,EAAE,WAAW,EAAE,GAAG,IAAA,wKAAW,EAAC,CAAC,QAAe,MAAM,cAAc;IACxE,IAAI,CAAC,aAAa;QAChB,IAAA,8KAAQ,EAAC;IACX,OAAO;QACL,IAAA,8KAAQ,EAAC;IACX;AACF","debugId":null}}]
+}
