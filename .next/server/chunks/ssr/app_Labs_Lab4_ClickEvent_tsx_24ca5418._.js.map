@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/kyen/Desktop/kanbas-next-js/app/Labs/Lab4/ClickEvent.tsx"],"sourcesContent":["'use client';\nconst hello = () => {\n  alert('Hello World!');\n};\nconst lifeIs = (good: string) => {\n  alert(`Life is ${good}`);\n};\nexport default function ClickEvent() {\n  return (\n    <div id=\"wd-click-event\">\n      <h2>Click Event</h2>\n      <button onClick={hello} id=\"wd-hello-world-click\">\n        Hello World!\n      </button>\n      <button onClick={() => lifeIs('Good!')} id=\"wd-life-is-good-click\">\n        Life is Good!\n      </button>\n      <button\n        onClick={() => {\n          hello();\n          lifeIs('Great!');\n        }}\n        id=\"wd-life-is-great-click\"\n      >\n        Life is Great!\n      </button>\n      <hr />\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;AACA,MAAM,QAAQ;IACZ,MAAM;AACR;AACA,MAAM,SAAS,CAAC;IACd,MAAM,CAAC,QAAQ,EAAE,MAAM;AACzB;AACe,SAAS;IACtB,qBACE,8OAAC;QAAI,IAAG;;0BACN,8OAAC;0BAAG;;;;;;0BACJ,8OAAC;gBAAO,SAAS;gBAAO,IAAG;0BAAuB;;;;;;0BAGlD,8OAAC;gBAAO,SAAS,IAAM,OAAO;gBAAU,IAAG;0BAAwB;;;;;;0BAGnE,8OAAC;gBACC,SAAS;oBACP;oBACA,OAAO;gBACT;gBACA,IAAG;0BACJ;;;;;;0BAGD,8OAAC;;;;;;;;;;;AAGP","debugId":null}}]
-}

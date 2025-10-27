@@ -2,27 +2,113 @@
 
 import { Form, Row, Col, Button, InputGroup } from 'react-bootstrap';
 import { BsCalendar } from 'react-icons/bs';
-import { useParams } from 'next/navigation';
-import Link from 'next/link';
-import * as db from '../../../../Database';
+import { useParams, useRouter } from 'next/navigation';
+import { useSelector, useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { addAssignment, updateAssignment } from '../reducer';
+
+const formatDateForInput = (dateString: string) => {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  return `${year}-${month}-${day}T${hours}:${minutes}`;
+};
 
 export default function AssignmentEditor() {
   const { cid, aid } = useParams();
-  const assignment = db.assignments.find((a) => a._id === aid);
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const { assignments } = useSelector(
+    (state: {
+      assignmentsReducer: {
+        assignments: Array<{
+          _id: string;
+          title: string;
+          course: string;
+          description: string;
+          points: number;
+          dueDate: string;
+          availableFromDate: string;
+          availableUntilDate: string;
+        }>;
+      };
+    }) => state.assignmentsReducer
+  );
+
+  const isNewAssignment = aid === 'new';
+  const existingAssignment = !isNewAssignment
+    ? assignments.find((a) => a._id === aid)
+    : null;
+
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [points, setPoints] = useState(100);
+  const [dueDate, setDueDate] = useState('2024-05-13T23:59');
+  const [availableFromDate, setAvailableFromDate] =
+    useState('2024-05-06T00:00');
+  const [availableUntilDate, setAvailableUntilDate] =
+    useState('2024-05-20T23:59');
+
+  useEffect(() => {
+    if (existingAssignment) {
+      setTitle(existingAssignment.title);
+      setDescription(existingAssignment.description);
+      setPoints(existingAssignment.points);
+      setDueDate(formatDateForInput(existingAssignment.dueDate));
+      setAvailableFromDate(
+        formatDateForInput(existingAssignment.availableFromDate)
+      );
+      setAvailableUntilDate(
+        formatDateForInput(existingAssignment.availableUntilDate)
+      );
+    }
+  }, [existingAssignment]);
+
+  const handleSave = () => {
+    const assignmentData = {
+      _id: existingAssignment?._id,
+      title,
+      course: cid,
+      description,
+      points,
+      dueDate: new Date(dueDate).toISOString(),
+      availableFromDate: new Date(availableFromDate).toISOString(),
+      availableUntilDate: new Date(availableUntilDate).toISOString(),
+    };
+
+    if (isNewAssignment) {
+      dispatch(addAssignment(assignmentData));
+    } else {
+      dispatch(updateAssignment(assignmentData));
+    }
+    router.push(`/Courses/${cid}/Assignments`);
+  };
+
+  const handleCancel = () => {
+    router.push(`/Courses/${cid}/Assignments`);
+  };
 
   return (
     <div id="wd-assignments-editor" className="p-3">
       <Form>
         <Form.Group className="mb-3" controlId="wd-name">
           <Form.Label>Assignment Name</Form.Label>
-          <Form.Control type="text" defaultValue={assignment?.title || ''} />
+          <Form.Control
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
         </Form.Group>
 
         <Form.Group className="mb-4" controlId="wd-description">
           <Form.Control
             as="textarea"
             rows={6}
-            defaultValue={assignment?.description || ''}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
         </Form.Group>
 
@@ -34,7 +120,8 @@ export default function AssignmentEditor() {
             <Form.Control
               id="wd-points"
               type="number"
-              defaultValue={assignment?.points || 100}
+              value={points}
+              onChange={(e) => setPoints(Number(e.target.value))}
               className="w-100"
             />
           </Col>
@@ -135,7 +222,8 @@ export default function AssignmentEditor() {
                 <InputGroup>
                   <Form.Control
                     type="datetime-local"
-                    defaultValue={assignment?.dueDate || '2024-05-13T23:59'}
+                    value={dueDate}
+                    onChange={(e) => setDueDate(e.target.value)}
                   />
                   <InputGroup.Text className="bg-light">
                     <BsCalendar className="text-secondary" />
@@ -152,9 +240,8 @@ export default function AssignmentEditor() {
                     <InputGroup>
                       <Form.Control
                         type="datetime-local"
-                        defaultValue={
-                          assignment?.availableFromDate || '2024-05-06T00:00'
-                        }
+                        value={availableFromDate}
+                        onChange={(e) => setAvailableFromDate(e.target.value)}
                       />
                       <InputGroup.Text className="bg-light">
                         <BsCalendar className="text-secondary" />
@@ -168,9 +255,8 @@ export default function AssignmentEditor() {
                     <InputGroup>
                       <Form.Control
                         type="datetime-local"
-                        defaultValue={
-                          assignment?.availableUntilDate || '2024-05-20T23:59'
-                        }
+                        value={availableUntilDate}
+                        onChange={(e) => setAvailableUntilDate(e.target.value)}
                       />
                       <InputGroup.Text className="bg-light">
                         <BsCalendar className="text-secondary" />
@@ -185,16 +271,17 @@ export default function AssignmentEditor() {
 
         <hr />
         <div className="text-end">
-          <Link href={`/Courses/${cid}/Assignments`}>
-            <Button id="wd-cancel" variant="secondary" className="me-2">
-              Cancel
-            </Button>
-          </Link>
-          <Link href={`/Courses/${cid}/Assignments`}>
-            <Button id="wd-save" variant="danger">
-              Save
-            </Button>
-          </Link>
+          <Button
+            id="wd-cancel"
+            variant="secondary"
+            className="me-2"
+            onClick={handleCancel}
+          >
+            Cancel
+          </Button>
+          <Button id="wd-save" variant="danger" onClick={handleSave}>
+            Save
+          </Button>
         </div>
       </Form>
     </div>

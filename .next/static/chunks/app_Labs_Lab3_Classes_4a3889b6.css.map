@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///Users/kyen/Desktop/kanbas-next-js/app/Labs/Lab3/Classes.css"],"sourcesContent":[".wd-bg-yellow    { background-color: lightyellow; }\n.wd-bg-blue      { background-color: lightblue;   }\n.wd-bg-red       { background-color: lightcoral;  }\n.wd-bg-green     { background-color: lightgreen;  }\n.wd-fg-black     { color: black;                  }\n.wd-padding-10px { padding: 10px;                 }\n"],"names":[],"mappings":"AAAA;;;;AACA;;;;AACA;;;;AACA;;;;AACA;;;;AACA","debugId":null}}]
-}

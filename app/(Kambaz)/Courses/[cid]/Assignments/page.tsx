@@ -16,8 +16,8 @@ import {
   BsCaretDownFill,
 } from 'react-icons/bs';
 import GreenCheckmark from '../Modules/GreenCheckmark';
-import * as db from '../../../Database';
 import { useParams } from 'next/navigation';
+import { useSelector } from 'react-redux';
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
@@ -32,8 +32,9 @@ const formatDate = (dateString: string) => {
 
 export default function Assignments() {
   const { cid } = useParams();
-  const assignments = db.assignments.filter(
-    (assignment) => assignment.course === cid
+  const { assignments } = useSelector((state: any) => state.assignmentsReducer);
+  const courseAssignments = assignments.filter(
+    (assignment: any) => assignment.course === cid
   );
 
   return (
@@ -51,18 +52,20 @@ export default function Assignments() {
             />
           </InputGroup>
         </div>
-        <Button
-          id="wd-add-assignment"
-          variant="danger"
-          size="lg"
-          className="float-end ms-2 text-nowrap border wd-header-action"
-        >
-          <FaPlus
-            className="me-2 position-relative"
-            style={{ bottom: '1px' }}
-          />
-          Assignment
-        </Button>
+        <Link href={`/Courses/${cid}/Assignments/new`}>
+          <Button
+            id="wd-add-assignment"
+            variant="danger"
+            size="lg"
+            className="float-end ms-2 text-nowrap border wd-header-action"
+          >
+            <FaPlus
+              className="me-2 position-relative"
+              style={{ bottom: '1px' }}
+            />
+            Assignment
+          </Button>
+        </Link>
         <Button
           id="wd-add-assignment-group"
           variant="secondary"
@@ -101,7 +104,7 @@ export default function Assignments() {
       </div>
 
       <ListGroup id="wd-assignment-list" className="rounded-0">
-        {assignments.map((assignment) => (
+        {courseAssignments.map((assignment: any) => (
           <ListGroupItem
             key={assignment._id}
             className="wd-assignment-list-item wd-assignment p-3 ps-2 d-flex align-items-center border-gray"
