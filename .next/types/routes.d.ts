@@ -3,7 +3,7 @@
 
 type AppRoutes = "/" | "/Account" | "/Account/Profile" | "/Account/Signin" | "/Account/Signup" | "/Calendar" | "/Courses/[cid]" | "/Courses/[cid]/Assignments" | "/Courses/[cid]/Assignments/[aid]" | "/Courses/[cid]/Grades" | "/Courses/[cid]/Home" | "/Courses/[cid]/Modules" | "/Courses/[cid]/People/Table" | "/Courses/[cid]/Piazza" | "/Courses/[cid]/Quizzes" | "/Courses/[cid]/Zoom" | "/Dashboard" | "/Inbox" | "/Labs" | "/Labs/Lab1" | "/Labs/Lab2" | "/Labs/Lab3" | "/Labs/Lab3/add/[a]/[b]" | "/Labs/Lab4" | "/Labs/Lab4/ReduxExamples" | "/Labs/Lab4/ReduxExamples/AddRedux" | "/Labs/Lab4/ReduxExamples/CounterRedux" | "/Labs/Lab4/ReduxExamples/HelloRedux"
 type PageRoutes = never
-type LayoutRoutes = "/" | "/Account" | "/Courses/[cid]" | "/Labs"
+type LayoutRoutes = "/" | "/Account" | "/Courses/[cid]" | "/Labs" | "/Labs/Lab4/ReduxExamples"
 type RedirectRoutes = never
 type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes
@@ -48,6 +48,7 @@ interface LayoutSlotMap {
   "/Account": never
   "/Courses/[cid]": never
   "/Labs": never
+  "/Labs/Lab4/ReduxExamples": never
 }
 
 
