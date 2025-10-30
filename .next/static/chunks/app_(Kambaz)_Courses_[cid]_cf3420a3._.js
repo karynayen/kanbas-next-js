@@ -128,11 +128,19 @@ function CoursesLayout(param) {
     let { children } = param;
     _s();
     const { cid } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"])();
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const { courses } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"])({
         "CoursesLayout.useSelector": (state)=>state.coursesReducer
     }["CoursesLayout.useSelector"]);
+    const { currentUser } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"])({
+        "CoursesLayout.useSelector": (state)=>state.accountReducer
+    }["CoursesLayout.useSelector"]);
+    const { enrollments } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"])({
+        "CoursesLayout.useSelector": (state)=>state.enrollmentsReducer
+    }["CoursesLayout.useSelector"]);
     const course = courses.find((course)=>course._id === cid);
     const [showNavigation, setShowNavigation] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const isEnrolled = (currentUser === null || currentUser === void 0 ? void 0 : currentUser.role) === 'FACULTY' || enrollments.some((enrollment)=>enrollment.user === (currentUser === null || currentUser === void 0 ? void 0 : currentUser._id) && enrollment.course === cid);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CoursesLayout.useEffect": ()=>{
             // Set initial state based on screen size (show on medium+ screens by default)
@@ -141,6 +149,20 @@ function CoursesLayout(param) {
             }
         }
     }["CoursesLayout.useEffect"], []);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "CoursesLayout.useEffect": ()=>{
+            if (currentUser && !isEnrolled) {
+                router.push('/Dashboard');
+            }
+        }
+    }["CoursesLayout.useEffect"], [
+        currentUser,
+        isEnrolled,
+        router
+    ]);
+    if (currentUser && !isEnrolled) {
+        return null;
+    }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         id: "wd-courses",
         children: [
@@ -155,7 +177,7 @@ function CoursesLayout(param) {
                         onClick: ()=>setShowNavigation(!showNavigation)
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/layout.tsx",
-                        lineNumber: 28,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Breadcrumb$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -164,19 +186,19 @@ function CoursesLayout(param) {
                         } : undefined
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/layout.tsx",
-                        lineNumber: 33,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/layout.tsx",
-                lineNumber: 27,
+                lineNumber: 46,
                 columnNumber: 7
             }, this),
             ' ',
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {}, void 0, false, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/layout.tsx",
-                lineNumber: 35,
+                lineNumber: 54,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -187,12 +209,12 @@ function CoursesLayout(param) {
                             cid: cid
                         }, void 0, false, {
                             fileName: "[project]/app/(Kambaz)/Courses/[cid]/layout.tsx",
-                            lineNumber: 39,
+                            lineNumber: 58,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/layout.tsx",
-                        lineNumber: 38,
+                        lineNumber: 57,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -200,25 +222,28 @@ function CoursesLayout(param) {
                         children: children
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/layout.tsx",
-                        lineNumber: 42,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/layout.tsx",
-                lineNumber: 36,
+                lineNumber: 55,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/(Kambaz)/Courses/[cid]/layout.tsx",
-        lineNumber: 26,
+        lineNumber: 45,
         columnNumber: 5
     }, this);
 }
-_s(CoursesLayout, "aVdSYdR60aNprIOZhD8MOipBhdo=", false, function() {
+_s(CoursesLayout, "qcIcO5+8ymFsj5cqqZjtjv2mIN0=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"]
     ];
 });

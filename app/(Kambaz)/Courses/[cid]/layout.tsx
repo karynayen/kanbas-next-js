@@ -4,17 +4,26 @@
 import { ReactNode, useState, useEffect } from 'react';
 import CourseNavigation from './Navigation';
 import { FaAlignJustify } from 'react-icons/fa';
-import { courses } from '../../Database';
 import Breadcrumb from './Breadcrumb';
 
 import { useSelector } from 'react-redux';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
 export default function CoursesLayout({ children }: { children: ReactNode }) {
   const { cid } = useParams();
+  const router = useRouter();
   const { courses } = useSelector((state: any) => state.coursesReducer);
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
+  const { enrollments } = useSelector((state: any) => state.enrollmentsReducer);
   const course = courses.find((course: any) => course._id === cid);
   const [showNavigation, setShowNavigation] = useState(false);
+
+  const isEnrolled =
+    currentUser?.role === 'FACULTY' ||
+    enrollments.some(
+      (enrollment: any) =>
+        enrollment.user === currentUser?._id && enrollment.course === cid
+    );
 
   useEffect(() => {
     // Set initial state based on screen size (show on medium+ screens by default)
@@ -22,6 +31,16 @@ export default function CoursesLayout({ children }: { children: ReactNode }) {
       setShowNavigation(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (currentUser && !isEnrolled) {
+      router.push('/Dashboard');
+    }
+  }, [currentUser, isEnrolled, router]);
+
+  if (currentUser && !isEnrolled) {
+    return null;
+  }
   return (
     <div id="wd-courses">
       <h2 className="text-danger">
