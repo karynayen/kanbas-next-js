@@ -1,6 +1,6 @@
 const HTTP_SERVER = process.env.NEXT_PUBLIC_HTTP_SERVER;
 import React, { useState } from 'react';
-import { FormControl } from 'react-bootstrap';
+import { FormControl, Form } from 'react-bootstrap';
 export default function WorkingWithArrays() {
   const [todo, setTodo] = useState({
     id: 1,
@@ -87,6 +87,56 @@ export default function WorkingWithArrays() {
         defaultValue={todo.title}
         className="w-50 float-start"
         onChange={(e) => setTodo({ ...todo, title: e.target.value })}
+      />
+      <br />
+      <br />
+      <hr />
+
+      <h3>Updating Todo Description</h3>
+      <a
+        href={`${API}/${todo.id}/description/${todo.description}`}
+        className="btn btn-primary float-end"
+      >
+        Update Description
+      </a>
+      <FormControl
+        value={todo.id}
+        className="w-25 float-start me-2"
+        type="number"
+        onChange={(e) =>
+          setTodo({ ...todo, id: parseInt(e.target.value) || 1 })
+        }
+      />
+      <FormControl
+        value={todo.description}
+        className="w-50 float-start"
+        onChange={(e) => setTodo({ ...todo, description: e.target.value })}
+      />
+      <br />
+      <br />
+      <hr />
+
+      <h3>Updating Todo Completed Status</h3>
+      <a
+        href={`${API}/${todo.id}/completed/${todo.completed}`}
+        className="btn btn-primary float-end"
+      >
+        Update Completed
+      </a>
+      <FormControl
+        value={todo.id}
+        className="w-25 float-start me-2"
+        type="number"
+        onChange={(e) =>
+          setTodo({ ...todo, id: parseInt(e.target.value) || 1 })
+        }
+      />
+      <Form.Check
+        type="checkbox"
+        label="Completed"
+        checked={todo.completed}
+        className="float-start mt-2"
+        onChange={(e) => setTodo({ ...todo, completed: e.target.checked })}
       />
       <br />
       <br />
