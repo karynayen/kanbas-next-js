@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 19, "column": 0}, "map": {"version":3,"sources":["file:///Users/kyen/Desktop/kanbas-next-js/app/Labs/page.tsx"],"sourcesContent":["import { redirect } from 'next/navigation';\nimport Lab1 from './Lab1/page';\n\nexport default function Labs() {\n  // return <Lab1 />;\n  redirect('/Labs/Lab1');\n}\n"],"names":[],"mappings":";;;;AAAA;AAAA;;AAGe,SAAS;IACtB,mBAAmB;IACnB,IAAA,iMAAQ,EAAC;AACX","debugId":null}}]
+}

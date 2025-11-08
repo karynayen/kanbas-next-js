@@ -137,10 +137,11 @@ function TOC() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$NavItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__NavItem$3e$__["NavItem"], {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$NavLink$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__NavLink$3e$__["NavLink"], {
-                        href: "/",
+                        href: "/Labs/Lab5",
                         as: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"],
+                        className: "nav-link ".concat(pathname.endsWith('Lab5') ? 'active' : ''),
                         children: [
-                            "Kambaz",
+                            "Lab 5",
                             ' '
                         ]
                     }, void 0, true, {
@@ -156,17 +157,38 @@ function TOC() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$NavItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__NavItem$3e$__["NavItem"], {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$NavLink$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__NavLink$3e$__["NavLink"], {
+                        href: "/",
+                        as: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"],
+                        children: [
+                            "Kambaz",
+                            ' '
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/Labs/TOC.tsx",
+                        lineNumber: 64,
+                        columnNumber: 9
+                    }, this),
+                    ' '
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/Labs/TOC.tsx",
+                lineNumber: 63,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$NavItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__NavItem$3e$__["NavItem"], {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$NavLink$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__NavLink$3e$__["NavLink"], {
                     href: "https://github.com/karynayen/kanbas-next-js",
                     children: "My GitHub"
                 }, void 0, false, {
                     fileName: "[project]/app/Labs/TOC.tsx",
-                    lineNumber: 60,
+                    lineNumber: 69,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/Labs/TOC.tsx",
-                lineNumber: 59,
+                lineNumber: 68,
                 columnNumber: 7
             }, this)
         ]

@@ -5,5 +5,9 @@
   "/(Kambaz)/Calendar/page": "app/(Kambaz)/Calendar/page.js",
   "/(Kambaz)/Courses/[cid]/Home/page": "app/(Kambaz)/Courses/[cid]/Home/page.js",
   "/(Kambaz)/Dashboard/page": "app/(Kambaz)/Dashboard/page.js",
-  "/(Kambaz)/page": "app/(Kambaz)/page.js"
+  "/(Kambaz)/page": "app/(Kambaz)/page.js",
+  "/Labs/Lab1/page": "app/Labs/Lab1/page.js",
+  "/Labs/Lab5/page": "app/Labs/Lab5/page.js",
+  "/Labs/page": "app/Labs/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }
