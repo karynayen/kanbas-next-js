@@ -133,16 +133,22 @@ module.exports = mod;
 /* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s([
     "createNewTodo",
     ()=>createNewTodo,
+    "deleteTodo",
+    ()=>deleteTodo,
     "fetchAssignment",
     ()=>fetchAssignment,
     "fetchTodos",
     ()=>fetchTodos,
     "fetchWelcomeMessage",
     ()=>fetchWelcomeMessage,
+    "postNewTodo",
+    ()=>postNewTodo,
     "removeTodo",
     ()=>removeTodo,
     "updateTitle",
-    ()=>updateTitle
+    ()=>updateTitle,
+    "updateTodo",
+    ()=>updateTodo
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [app-ssr] (ecmascript)");
 ;
@@ -171,6 +177,18 @@ const removeTodo = async (todo)=>{
 };
 const createNewTodo = async ()=>{
     const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].get(`${TODOS_API}/create`);
+    return response.data;
+};
+const postNewTodo = async (todo)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${TODOS_API}`, todo);
+    return response.data;
+};
+const deleteTodo = async (todo)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].delete(`${TODOS_API}/${todo.id}`);
+    return response.data;
+};
+const updateTodo = async (todo)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].put(`${TODOS_API}/${todo.id}`, todo);
     return response.data;
 };
 }),
@@ -1307,9 +1325,14 @@ function WorkingWithObjects() {
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Labs$2f$Lab5$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Labs/Lab5/client.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$FormControl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__ = __turbopack_context__.i("[project]/node_modules/react-bootstrap/esm/FormControl.js [app-ssr] (ecmascript) <export default as FormControl>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$ListGroup$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ListGroup$3e$__ = __turbopack_context__.i("[project]/node_modules/react-bootstrap/esm/ListGroup.js [app-ssr] (ecmascript) <export default as ListGroup>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$ListGroupItem$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ListGroupItem$3e$__ = __turbopack_context__.i("[project]/node_modules/react-bootstrap/esm/ListGroupItem.js [app-ssr] (ecmascript) <export default as ListGroupItem>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/fa/index.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$ti$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/ti/index.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/fa6/index.mjs [app-ssr] (ecmascript)");
+;
+;
 ;
 ;
 ;
@@ -1317,6 +1340,22 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$ico
 ;
 function WorkingWithArraysAsynchronously() {
     const [todos, setTodos] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [errorMessage, setErrorMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const editTodo = (todo)=>{
+        const updatedTodos = todos.map((t)=>t.id === todo.id ? {
+                ...todo,
+                editing: true
+            } : t);
+        setTodos(updatedTodos);
+    };
+    const updateTodo = async (todo)=>{
+        try {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Labs$2f$Lab5$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["updateTodo"](todo);
+            setTodos(todos.map((t)=>t.id === todo.id ? todo : t));
+        } catch (error) {
+            setErrorMessage(error.response.data.message);
+        }
+    };
     const fetchTodos = async ()=>{
         const todos = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Labs$2f$Lab5$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fetchTodos"]();
         setTodos(todos);
@@ -1329,6 +1368,26 @@ function WorkingWithArraysAsynchronously() {
         const todos = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Labs$2f$Lab5$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createNewTodo"]();
         setTodos(todos);
     };
+    const postNewTodo = async ()=>{
+        const newTodo = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Labs$2f$Lab5$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["postNewTodo"]({
+            title: 'New Posted Todo',
+            completed: false
+        });
+        setTodos([
+            ...todos,
+            newTodo
+        ]);
+    };
+    const deleteTodo = async (todo)=>{
+        try {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Labs$2f$Lab5$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["deleteTodo"](todo);
+            const newTodos = todos.filter((t)=>t.id !== todo.id);
+            setTodos(newTodos);
+        } catch (error) {
+            console.log(error);
+            setErrorMessage(error.response.data.message);
+        }
+    };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         fetchTodos();
     }, []);
@@ -1339,8 +1398,17 @@ function WorkingWithArraysAsynchronously() {
                 children: "Working with Arrays Asynchronously"
             }, void 0, false, {
                 fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
-                lineNumber: 27,
+                lineNumber: 63,
                 columnNumber: 7
+            }, this),
+            errorMessage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                id: "wd-todo-error-message",
+                className: "alert alert-danger mb-2 mt-2",
+                children: errorMessage
+            }, void 0, false, {
+                fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
+                lineNumber: 65,
+                columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                 children: [
@@ -1352,38 +1420,50 @@ function WorkingWithArraysAsynchronously() {
                         className: "text-success float-end fs-3"
                     }, void 0, false, {
                         fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
-                        lineNumber: 31,
+                        lineNumber: 75,
                         columnNumber: 9
                     }, this),
-                    ' '
+                    ' ',
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaPlusCircle"], {
+                        onClick: postNewTodo,
+                        className: "text-primary float-end fs-3 me-3",
+                        id: "wd-post-todo"
+                    }, void 0, false, {
+                        fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
+                        lineNumber: 79,
+                        columnNumber: 9
+                    }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
-                lineNumber: 28,
+                lineNumber: 72,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$ListGroup$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ListGroup$3e$__["ListGroup"], {
                 children: todos.map((todo)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$ListGroupItem$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ListGroupItem$3e$__["ListGroupItem"], {
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaTrash"], {
-                                onClick: ()=>removeTodo(todo),
-                                className: "text-danger float-end mt-1",
-                                id: "wd-remove-todo"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaPencil"], {
+                                onClick: ()=>editTodo(todo),
+                                className: "text-primary float-end me-2 mt-1"
                             }, void 0, false, {
                                 fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
-                                lineNumber: 39,
+                                lineNumber: 88,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                 type: "checkbox",
-                                className: "form-check-input me-2",
-                                defaultChecked: todo.completed
+                                defaultChecked: todo.completed,
+                                className: "form-check-input me-2 float-start",
+                                onChange: (e)=>updateTodo({
+                                        ...todo,
+                                        completed: e.target.checked
+                                    })
                             }, void 0, false, {
                                 fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
-                                lineNumber: 45,
+                                lineNumber: 92,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            !todo.editing ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 style: {
                                     textDecoration: todo.completed ? 'line-through' : 'none'
                                 },
@@ -1393,30 +1473,67 @@ function WorkingWithArraysAsynchronously() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
-                                lineNumber: 50,
+                                lineNumber: 101,
+                                columnNumber: 15
+                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$FormControl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
+                                className: "w-50 float-start",
+                                defaultValue: todo.title,
+                                onKeyDown: (e)=>{
+                                    if (e.key === 'Enter') {
+                                        updateTodo({
+                                            ...todo,
+                                            editing: false
+                                        });
+                                    }
+                                },
+                                onChange: (e)=>updateTodo({
+                                        ...todo,
+                                        title: e.target.value
+                                    })
+                            }, void 0, false, {
+                                fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
+                                lineNumber: 109,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaTrash"], {
+                                onClick: ()=>removeTodo(todo),
+                                className: "text-danger float-end mt-1",
+                                id: "wd-remove-todo"
+                            }, void 0, false, {
+                                fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
+                                lineNumber: 120,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$ti$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TiDelete"], {
+                                onClick: ()=>deleteTodo(todo),
+                                className: "text-danger float-end me-2 fs-3",
+                                id: "wd-delete-todo"
+                            }, void 0, false, {
+                                fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
+                                lineNumber: 125,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, todo.id, true, {
                         fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
-                        lineNumber: 38,
+                        lineNumber: 87,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
-                lineNumber: 36,
+                lineNumber: 85,
                 columnNumber: 7
             }, this),
             ' ',
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {}, void 0, false, {
                 fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
-                lineNumber: 60,
+                lineNumber: 133,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/Labs/Lab5/WorkingWithArraysAsynchronously.tsx",
-        lineNumber: 26,
+        lineNumber: 62,
         columnNumber: 5
     }, this);
 }
