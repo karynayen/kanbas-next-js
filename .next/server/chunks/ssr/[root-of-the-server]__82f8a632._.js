@@ -593,26 +593,29 @@ module.exports = mod;
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [app-ssr] (ecmascript)");
 ;
+const axiosWithCredentials = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].create({
+    withCredentials: true
+});
 const HTTP_SERVER = ("TURBOPACK compile-time value", "http://localhost:4000");
 const USERS_API = `${HTTP_SERVER}/api/users`;
 const signin = async (credentials)=>{
-    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${USERS_API}/signin`, credentials);
-    return response.data;
-};
-const signup = async (user)=>{
-    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${USERS_API}/signup`, user);
-    return response.data;
-};
-const updateUser = async (user)=>{
-    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].put(`${USERS_API}/${user._id}`, user);
+    const response = await axiosWithCredentials.post(`${USERS_API}/signin`, credentials);
     return response.data;
 };
 const profile = async ()=>{
-    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${USERS_API}/profile`);
+    const response = await axiosWithCredentials.post(`${USERS_API}/profile`);
+    return response.data;
+};
+const signup = async (user)=>{
+    const response = await axiosWithCredentials.post(`${USERS_API}/signup`, user);
     return response.data;
 };
 const signout = async ()=>{
-    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${USERS_API}/signout`);
+    const response = await axiosWithCredentials.post(`${USERS_API}/signout`);
+    return response.data;
+};
+const updateUser = async (user)=>{
+    const response = await axiosWithCredentials.put(`${USERS_API}/${user._id}`, user);
     return response.data;
 };
 }),
