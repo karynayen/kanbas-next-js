@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
+import * as client from '../client';
+
 import { redirect } from 'next/dist/client/components/navigation';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -9,14 +11,21 @@ export default function Profile() {
   const [profile, setProfile] = useState<any>({});
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state: any) => state.accountReducer);
+  const updateProfile = async () => {
+    const updatedProfile = await client.updateUser(profile);
+    dispatch(setCurrentUser(updatedProfile));
+  };
+
   const fetchProfile = () => {
     if (!currentUser) return redirect('/Account/Signin');
     setProfile(currentUser);
   };
-  const signout = () => {
+  const signout = async () => {
+    await client.signout();
     dispatch(setCurrentUser(null));
     redirect('/Account/Signin');
   };
+
   useEffect(() => {
     fetchProfile();
   }, []);
@@ -25,6 +34,13 @@ export default function Profile() {
       <h3>Profile</h3>
       {profile && (
         <div>
+          <button
+            onClick={updateProfile}
+            className="btn btn-primary w-100 mb-2"
+          >
+            {' '}
+            Update{' '}
+          </button>
           <FormControl
             id="wd-username"
             className="mb-2"
@@ -44,6 +60,7 @@ export default function Profile() {
           <FormControl
             id="wd-firstname"
             className="mb-2"
+            placeholder="First name"
             defaultValue={profile.firstName}
             onChange={(e) =>
               setProfile({ ...profile, firstName: e.target.value })
@@ -52,6 +69,7 @@ export default function Profile() {
           <FormControl
             id="wd-lastname"
             className="mb-2"
+            placeholder="Last name"
             defaultValue={profile.lastName}
             onChange={(e) =>
               setProfile({ ...profile, lastName: e.target.value })
@@ -61,12 +79,14 @@ export default function Profile() {
             id="wd-dob"
             className="mb-2"
             type="date"
+            placeholder="Date of birth"
             defaultValue={profile.dob}
             onChange={(e) => setProfile({ ...profile, dob: e.target.value })}
           />
           <FormControl
             id="wd-email"
             className="mb-2"
+            placeholder="Email"
             defaultValue={profile.email}
             onChange={(e) => setProfile({ ...profile, email: e.target.value })}
           />

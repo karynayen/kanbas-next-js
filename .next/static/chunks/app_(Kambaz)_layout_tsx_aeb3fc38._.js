@@ -6,8 +6,9 @@
   "static/chunks/node_modules_react-icons_lia_index_mjs_45e6d963._.js",
   "static/chunks/node_modules_react-icons_fa6_index_mjs_79da82bd._.js",
   "static/chunks/node_modules_react-icons_lib_844c6c50._.js",
-  "static/chunks/node_modules_04860c08._.js",
-  "static/chunks/app_(Kambaz)_e7ad2910._.js",
+  "static/chunks/node_modules_axios_lib_99e19c7d._.js",
+  "static/chunks/node_modules_e5bc84aa._.js",
+  "static/chunks/app_(Kambaz)_f5b589a6._.js",
   "static/chunks/app_(Kambaz)_styles_9f318760.css"
 ],
     source: "dynamic"

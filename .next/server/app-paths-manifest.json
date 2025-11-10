@@ -1,4 +1,11 @@
 {
+  "/(Kambaz)/Account/Profile/page": "app/(Kambaz)/Account/Profile/page.js",
+  "/(Kambaz)/Account/Signin/page": "app/(Kambaz)/Account/Signin/page.js",
+  "/(Kambaz)/Account/Signup/page": "app/(Kambaz)/Account/Signup/page.js",
+  "/(Kambaz)/Account/page": "app/(Kambaz)/Account/page.js",
+  "/(Kambaz)/Dashboard/page": "app/(Kambaz)/Dashboard/page.js",
+  "/(Kambaz)/page": "app/(Kambaz)/page.js",
   "/Labs/Lab5/page": "app/Labs/Lab5/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }

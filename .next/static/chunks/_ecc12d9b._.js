@@ -7,6 +7,7 @@
     ()=>Profile
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Account$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(Kambaz)/Account/client.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/components/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-redux/dist/react-redux.mjs [app-client] (ecmascript)");
@@ -21,6 +22,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 function Profile() {
     _s();
     const [profile, setProfile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
@@ -28,11 +30,16 @@ function Profile() {
     const { currentUser } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"])({
         "Profile.useSelector": (state)=>state.accountReducer
     }["Profile.useSelector"]);
+    const updateProfile = async ()=>{
+        const updatedProfile = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Account$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["updateUser"](profile);
+        dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Account$2f$reducer$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setCurrentUser"])(updatedProfile));
+    };
     const fetchProfile = ()=>{
         if (!currentUser) return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["redirect"])('/Account/Signin');
         setProfile(currentUser);
     };
-    const signout = ()=>{
+    const signout = async ()=>{
+        await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Account$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["signout"]();
         dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Account$2f$reducer$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setCurrentUser"])(null));
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["redirect"])('/Account/Signin');
     };
@@ -48,11 +55,24 @@ function Profile() {
                 children: "Profile"
             }, void 0, false, {
                 fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                lineNumber: 25,
+                lineNumber: 34,
                 columnNumber: 7
             }, this),
             profile && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: updateProfile,
+                        className: "btn btn-primary w-100 mb-2",
+                        children: [
+                            ' ',
+                            "Update",
+                            ' '
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
+                        lineNumber: 37,
+                        columnNumber: 11
+                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$FormControl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
                         id: "wd-username",
                         className: "mb-2",
@@ -63,7 +83,7 @@ function Profile() {
                             })
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                        lineNumber: 28,
+                        lineNumber: 44,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$FormControl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
@@ -76,12 +96,13 @@ function Profile() {
                             })
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                        lineNumber: 36,
+                        lineNumber: 52,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$FormControl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
                         id: "wd-firstname",
                         className: "mb-2",
+                        placeholder: "First name",
                         defaultValue: profile.firstName,
                         onChange: (e)=>setProfile({
                                 ...profile,
@@ -89,12 +110,13 @@ function Profile() {
                             })
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                        lineNumber: 44,
+                        lineNumber: 60,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$FormControl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
                         id: "wd-lastname",
                         className: "mb-2",
+                        placeholder: "Last name",
                         defaultValue: profile.lastName,
                         onChange: (e)=>setProfile({
                                 ...profile,
@@ -102,13 +124,14 @@ function Profile() {
                             })
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                        lineNumber: 52,
+                        lineNumber: 69,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$FormControl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
                         id: "wd-dob",
                         className: "mb-2",
                         type: "date",
+                        placeholder: "Date of birth",
                         defaultValue: profile.dob,
                         onChange: (e)=>setProfile({
                                 ...profile,
@@ -116,12 +139,13 @@ function Profile() {
                             })
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                        lineNumber: 60,
+                        lineNumber: 78,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$FormControl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
                         id: "wd-email",
                         className: "mb-2",
+                        placeholder: "Email",
                         defaultValue: profile.email,
                         onChange: (e)=>setProfile({
                                 ...profile,
@@ -129,7 +153,7 @@ function Profile() {
                             })
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                        lineNumber: 67,
+                        lineNumber: 86,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -145,7 +169,7 @@ function Profile() {
                                 children: "User"
                             }, void 0, false, {
                                 fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                                lineNumber: 78,
+                                lineNumber: 98,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -153,7 +177,7 @@ function Profile() {
                                 children: "Admin"
                             }, void 0, false, {
                                 fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                                lineNumber: 79,
+                                lineNumber: 99,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -161,7 +185,7 @@ function Profile() {
                                 children: "Faculty"
                             }, void 0, false, {
                                 fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                                lineNumber: 80,
+                                lineNumber: 100,
                                 columnNumber: 13
                             }, this),
                             ' ',
@@ -170,13 +194,13 @@ function Profile() {
                                 children: "Student"
                             }, void 0, false, {
                                 fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                                lineNumber: 81,
+                                lineNumber: 101,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                        lineNumber: 73,
+                        lineNumber: 93,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -186,19 +210,19 @@ function Profile() {
                         children: "Sign out"
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                        lineNumber: 83,
+                        lineNumber: 103,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-                lineNumber: 27,
+                lineNumber: 36,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/(Kambaz)/Account/Profile/page.tsx",
-        lineNumber: 24,
+        lineNumber: 33,
         columnNumber: 5
     }, this);
 }
