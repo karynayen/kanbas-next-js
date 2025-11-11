@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import * as client from '../Courses/client';
+import * as enrollmentClient from './client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
@@ -28,9 +29,19 @@ export default function Dashboard() {
   const { courses } = useSelector((state: any) => state.coursesReducer);
   const { enrollments } = useSelector((state: any) => state.enrollmentsReducer);
 
+  const dispatch = useDispatch();
+  const [showAllCourses, setShowAllCourses] = useState(false);
+
   const fetchCourses = async () => {
     try {
-      const courses = await client.findMyCourses();
+      let courses;
+      if (showAllCourses) {
+        // Fetch ALL courses when in Enrollments mode
+        courses = await client.fetchAllCourses();
+      } else {
+        // Fetch only user's enrolled courses when in My Courses mode
+        courses = await client.findMyCourses();
+      }
       dispatch(setCourses(courses));
     } catch (error) {
       console.error(error);
@@ -38,10 +49,7 @@ export default function Dashboard() {
   };
   useEffect(() => {
     fetchCourses();
-  }, [currentUser]);
-
-  const dispatch = useDispatch();
-  const [showAllCourses, setShowAllCourses] = useState(false);
+  }, [currentUser, showAllCourses]);
 
   const [course, setCourse] = useState<any>({
     _id: '0',
@@ -63,14 +71,26 @@ export default function Dashboard() {
     );
   };
 
-  const handleEnroll = (courseId: string) => {
+  const handleEnroll = async (courseId: string) => {
     if (!currentUser) return;
-    dispatch(enrollInCourse({ userId: currentUser._id, courseId }));
+    try {
+      await enrollmentClient.enrollUserInCourse(currentUser._id, courseId);
+      dispatch(enrollInCourse({ userId: currentUser._id, courseId }));
+      await fetchCourses(); // Refresh courses after enrollment
+    } catch (error) {
+      console.error('Failed to enroll:', error);
+    }
   };
 
-  const handleUnenroll = (courseId: string) => {
+  const handleUnenroll = async (courseId: string) => {
     if (!currentUser) return;
-    dispatch(unenrollFromCourse({ userId: currentUser._id, courseId }));
+    try {
+      await enrollmentClient.unenrollUserFromCourse(currentUser._id, courseId);
+      dispatch(unenrollFromCourse({ userId: currentUser._id, courseId }));
+      await fetchCourses(); // Refresh courses after unenrollment
+    } catch (error) {
+      console.error('Failed to unenroll:', error);
+    }
   };
 
   const onAddNewCourse = async () => {

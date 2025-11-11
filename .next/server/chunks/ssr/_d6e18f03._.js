@@ -68,6 +68,31 @@ const updateModule = async (module)=>{
     return data;
 };
 }),
+"[project]/app/(Kambaz)/Database/client.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "enrollUserInCourse",
+    ()=>enrollUserInCourse,
+    "unenrollUserFromCourse",
+    ()=>unenrollUserFromCourse
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [app-ssr] (ecmascript)");
+;
+const axiosWithCredentials = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].create({
+    withCredentials: true
+});
+const HTTP_SERVER = ("TURBOPACK compile-time value", "http://localhost:4000");
+const COURSES_API = `${HTTP_SERVER}/api/courses`;
+const enrollUserInCourse = async (userId, courseId)=>{
+    const { data } = await axiosWithCredentials.post(`${COURSES_API}/${courseId}/users/${userId}/enroll`);
+    return data;
+};
+const unenrollUserFromCourse = async (userId, courseId)=>{
+    const { data } = await axiosWithCredentials.delete(`${COURSES_API}/${courseId}/users/${userId}/unenroll`);
+    return data;
+};
+}),
 "[project]/app/(Kambaz)/Dashboard/page.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -77,11 +102,7 @@ const updateModule = async (module)=>{
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(Kambaz)/Courses/client.ts [app-ssr] (ecmascript)");
-(()=>{
-    const e = new Error("Cannot find module '../Database/client'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Database$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(Kambaz)/Database/client.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Row$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Row$3e$__ = __turbopack_context__.i("[project]/node_modules/react-bootstrap/esm/Row.js [app-ssr] (ecmascript) <export default as Row>");
@@ -142,7 +163,7 @@ function Dashboard() {
     const handleEnroll = async (courseId)=>{
         if (!currentUser) return;
         try {
-            await enrollmentClient.enrollUserInCourse(currentUser._id, courseId);
+            await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Database$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["enrollUserInCourse"](currentUser._id, courseId);
             dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Database$2f$reducer$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["enrollInCourse"])({
                 userId: currentUser._id,
                 courseId
@@ -154,7 +175,7 @@ function Dashboard() {
     const handleUnenroll = async (courseId)=>{
         if (!currentUser) return;
         try {
-            await enrollmentClient.unenrollUserFromCourse(currentUser._id, courseId);
+            await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Database$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["unenrollUserFromCourse"](currentUser._id, courseId);
             dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Database$2f$reducer$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["unenrollFromCourse"])({
                 userId: currentUser._id,
                 courseId
@@ -2021,4 +2042,4 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$boo
 }),
 ];
 
-//# sourceMappingURL=_c475c70b._.js.map
+//# sourceMappingURL=_d6e18f03._.js.map
