@@ -8,7 +8,7 @@
   "static/chunks/node_modules_react-icons_lib_844c6c50._.js",
   "static/chunks/node_modules_axios_lib_99e19c7d._.js",
   "static/chunks/node_modules_e5bc84aa._.js",
-  "static/chunks/app_(Kambaz)_5828c5d9._.js",
+  "static/chunks/app_(Kambaz)_54dfaf14._.js",
   "static/chunks/app_(Kambaz)_styles_9f318760.css"
 ],
     source: "dynamic"

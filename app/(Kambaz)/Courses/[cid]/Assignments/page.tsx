@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import Link from 'next/link';
 import {
@@ -18,7 +19,9 @@ import {
 import GreenCheckmark from '../Modules/GreenCheckmark';
 import { useParams } from 'next/navigation';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteAssignment } from './reducer';
+import { deleteAssignment, setAssignments } from './reducer';
+import * as client from './client';
+import { useEffect } from 'react';
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
@@ -45,12 +48,23 @@ interface Assignment {
 export default function Assignments() {
   const { cid } = useParams();
   const dispatch = useDispatch();
+  const fetchAssignments = async () => {
+    const assignments = await client.findAssignmentsForCourse(cid as string);
+    dispatch(setAssignments(assignments));
+  };
+  useEffect(() => {
+    fetchAssignments();
+  }, []);
+  const onDeleteAssignment = async (assignmentId: string) => {
+    await client.deleteAssignment(assignmentId);
+    dispatch(
+      setAssignments(assignments.filter((a: any) => a._id !== assignmentId))
+    );
+  };
+
   const { assignments } = useSelector(
     (state: { assignmentsReducer: { assignments: Assignment[] } }) =>
       state.assignmentsReducer
-  );
-  const courseAssignments = assignments.filter(
-    (assignment) => assignment.course === cid
   );
 
   const handleDelete = (assignmentId: string, assignmentTitle: string) => {
@@ -58,7 +72,7 @@ export default function Assignments() {
       `Are you sure you want to remove the assignment "${assignmentTitle}"?`
     );
     if (confirmed) {
-      dispatch(deleteAssignment(assignmentId));
+      onDeleteAssignment(assignmentId);
     }
   };
 
@@ -129,7 +143,7 @@ export default function Assignments() {
       </div>
 
       <ListGroup id="wd-assignment-list" className="rounded-0">
-        {courseAssignments.map((assignment) => (
+        {assignments.map((assignment) => (
           <ListGroupItem
             key={assignment._id}
             className="wd-assignment-list-item wd-assignment p-3 ps-2 d-flex align-items-center border-gray"

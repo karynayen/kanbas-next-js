@@ -6,6 +6,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { addAssignment, updateAssignment } from '../reducer';
+import * as client from '../client';
 
 const formatDateForInput = (dateString: string) => {
   const date = new Date(dateString);
@@ -67,11 +68,9 @@ export default function AssignmentEditor() {
     }
   }, [existingAssignment]);
 
-  const handleSave = () => {
+  const handleSave = async () => {
     const assignmentData = {
-      _id: existingAssignment?._id,
       title,
-      course: cid,
       description,
       points,
       dueDate: new Date(dueDate).toISOString(),
@@ -80,9 +79,17 @@ export default function AssignmentEditor() {
     };
 
     if (isNewAssignment) {
-      dispatch(addAssignment(assignmentData));
+      const newAssignment = await client.createAssignment(
+        cid as string,
+        assignmentData
+      );
+      dispatch(addAssignment(newAssignment));
     } else {
-      dispatch(updateAssignment(assignmentData));
+      const updatedAssignment = await client.updateAssignment({
+        ...assignmentData,
+        _id: aid,
+      });
+      dispatch(updateAssignment(updatedAssignment));
     }
     router.push(`/Courses/${cid}/Assignments`);
   };

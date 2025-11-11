@@ -39,10 +39,54 @@ function GreenCheckmark() {
     }, this);
 }
 }),
+"[project]/app/(Kambaz)/Courses/[cid]/Assignments/client.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s([
+    "createAssignment",
+    ()=>createAssignment,
+    "deleteAssignment",
+    ()=>deleteAssignment,
+    "findAssignmentById",
+    ()=>findAssignmentById,
+    "findAssignmentsForCourse",
+    ()=>findAssignmentsForCourse,
+    "updateAssignment",
+    ()=>updateAssignment
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [app-ssr] (ecmascript)");
+;
+const axiosWithCredentials = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].create({
+    withCredentials: true
+});
+const HTTP_SERVER = ("TURBOPACK compile-time value", "http://localhost:4000");
+const COURSES_API = `${HTTP_SERVER}/api/courses`;
+const ASSIGNMENTS_API = `${HTTP_SERVER}/api/assignments`;
+const findAssignmentsForCourse = async (courseId)=>{
+    const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].get(`${COURSES_API}/${courseId}/assignments`);
+    return data;
+};
+const findAssignmentById = async (assignmentId)=>{
+    const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].get(`${ASSIGNMENTS_API}/${assignmentId}`);
+    return data;
+};
+const createAssignment = async (courseId, assignment)=>{
+    const { data } = await axiosWithCredentials.post(`${COURSES_API}/${courseId}/assignments`, assignment);
+    return data;
+};
+const updateAssignment = async (assignment)=>{
+    const { data } = await axiosWithCredentials.put(`${ASSIGNMENTS_API}/${assignment._id}`, assignment);
+    return data;
+};
+const deleteAssignment = async (assignmentId)=>{
+    const { data } = await axiosWithCredentials.delete(`${ASSIGNMENTS_API}/${assignmentId}`);
+    return data;
+};
+}),
 "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.s([
+/* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s([
     "default",
     ()=>Assignments
 ]);
@@ -61,12 +105,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-redux/dist/react-redux.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Assignments$2f$reducer$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(Kambaz)/Courses/[cid]/Assignments/reducer.ts [app-ssr] (ecmascript)");
-(()=>{
-    const e = new Error("Cannot find module '../client'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Assignments$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(Kambaz)/Courses/[cid]/Assignments/client.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 'use client';
+;
 ;
 ;
 ;
@@ -93,18 +135,21 @@ function Assignments() {
     const { cid } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useParams"])();
     const dispatch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useDispatch"])();
     const fetchAssignments = async ()=>{
-        const assignments = await client.findAssignmentsForCourse(cid);
+        const assignments = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Assignments$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["findAssignmentsForCourse"](cid);
         dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Assignments$2f$reducer$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["setAssignments"])(assignments));
     };
-    useEffect(()=>{
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         fetchAssignments();
     }, []);
+    const onDeleteAssignment = async (assignmentId)=>{
+        await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Assignments$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["deleteAssignment"](assignmentId);
+        dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Assignments$2f$reducer$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["setAssignments"])(assignments.filter((a)=>a._id !== assignmentId)));
+    };
     const { assignments } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSelector"])((state)=>state.assignmentsReducer);
-    const courseAssignments = assignments.filter((assignment)=>assignment.course === cid);
     const handleDelete = (assignmentId, assignmentTitle)=>{
         const confirmed = window.confirm(`Are you sure you want to remove the assignment "${assignmentTitle}"?`);
         if (confirmed) {
-            dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Assignments$2f$reducer$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["deleteAssignment"])(assignmentId));
+            onDeleteAssignment(assignmentId);
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -123,12 +168,12 @@ function Assignments() {
                                         className: "text-secondary"
                                     }, void 0, false, {
                                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                        lineNumber: 80,
+                                        lineNumber: 85,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 84,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Control, {
@@ -137,18 +182,18 @@ function Assignments() {
                                     className: "border-start-0"
                                 }, void 0, false, {
                                     fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                    lineNumber: 82,
+                                    lineNumber: 87,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                            lineNumber: 78,
+                            lineNumber: 83,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                        lineNumber: 77,
+                        lineNumber: 82,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -166,19 +211,19 @@ function Assignments() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                    lineNumber: 96,
+                                    lineNumber: 101,
                                     columnNumber: 13
                                 }, this),
                                 "Assignment"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                            lineNumber: 90,
+                            lineNumber: 95,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                        lineNumber: 89,
+                        lineNumber: 94,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Button$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -194,20 +239,20 @@ function Assignments() {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                lineNumber: 109,
+                                lineNumber: 114,
                                 columnNumber: 11
                             }, this),
                             "Group"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                        lineNumber: 103,
+                        lineNumber: 108,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                lineNumber: 76,
+                lineNumber: 81,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -221,7 +266,7 @@ function Assignments() {
                                 className: "me-2 fs-5 text-secondary"
                             }, void 0, false, {
                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                lineNumber: 119,
+                                lineNumber: 124,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bs$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BsCaretDownFill"], {
@@ -229,14 +274,14 @@ function Assignments() {
                                 size: 12
                             }, void 0, false, {
                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                lineNumber: 120,
+                                lineNumber: 125,
                                 columnNumber: 11
                             }, this),
                             "ASSIGNMENTS"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                        lineNumber: 118,
+                        lineNumber: 123,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -249,63 +294,63 @@ function Assignments() {
                                 children: "40% of Total"
                             }, void 0, false, {
                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                lineNumber: 124,
+                                lineNumber: 129,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 className: "btn p-1 bg-transparent border-0 text-secondary me-1",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaPlus"], {}, void 0, false, {
                                     fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                    lineNumber: 132,
+                                    lineNumber: 137,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                lineNumber: 131,
+                                lineNumber: 136,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 className: "btn p-1 bg-transparent border-0 text-secondary",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bs$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BsThreeDotsVertical"], {}, void 0, false, {
                                     fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                    lineNumber: 135,
+                                    lineNumber: 140,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                lineNumber: 134,
+                                lineNumber: 139,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                        lineNumber: 123,
+                        lineNumber: 128,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                lineNumber: 117,
+                lineNumber: 122,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$ListGroup$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ListGroup$3e$__["ListGroup"], {
                 id: "wd-assignment-list",
                 className: "rounded-0",
-                children: courseAssignments.map((assignment)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$ListGroupItem$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ListGroupItem$3e$__["ListGroupItem"], {
+                children: assignments.map((assignment)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$ListGroupItem$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ListGroupItem$3e$__["ListGroupItem"], {
                         className: "wd-assignment-list-item wd-assignment p-3 ps-2 d-flex align-items-center border-gray",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bs$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BsGripVertical"], {
                                 className: "me-0 fs-3 text-secondary"
                             }, void 0, false, {
                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                lineNumber: 146,
+                                lineNumber: 151,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$io5$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IoNewspaperOutline"], {
                                 className: "text-success me-3 fs-5"
                             }, void 0, false, {
                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                lineNumber: 147,
+                                lineNumber: 152,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -317,7 +362,7 @@ function Assignments() {
                                         children: assignment.title
                                     }, void 0, false, {
                                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                        lineNumber: 149,
+                                        lineNumber: 154,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -328,7 +373,7 @@ function Assignments() {
                                                 children: "Multiple Modules"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                                lineNumber: 156,
+                                                lineNumber: 161,
                                                 columnNumber: 17
                                             }, this),
                                             " |",
@@ -337,7 +382,7 @@ function Assignments() {
                                                 children: "Not available until"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                                lineNumber: 157,
+                                                lineNumber: 162,
                                                 columnNumber: 17
                                             }, this),
                                             ' ',
@@ -348,7 +393,7 @@ function Assignments() {
                                                 children: "Due"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                                lineNumber: 159,
+                                                lineNumber: 164,
                                                 columnNumber: 17
                                             }, this),
                                             " ",
@@ -360,13 +405,13 @@ function Assignments() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                        lineNumber: 155,
+                                        lineNumber: 160,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                lineNumber: 148,
+                                lineNumber: 153,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -380,46 +425,46 @@ function Assignments() {
                                         onClick: ()=>handleDelete(assignment._id, assignment.title)
                                     }, void 0, false, {
                                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                        lineNumber: 164,
+                                        lineNumber: 169,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Modules$2f$GreenCheckmark$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                        lineNumber: 169,
+                                        lineNumber: 174,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bs$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BsThreeDotsVertical"], {
                                         className: "ms-2 text-secondary"
                                     }, void 0, false, {
                                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                        lineNumber: 170,
+                                        lineNumber: 175,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                                lineNumber: 163,
+                                lineNumber: 168,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, assignment._id, true, {
                         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                        lineNumber: 142,
+                        lineNumber: 147,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-                lineNumber: 140,
+                lineNumber: 145,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx",
-        lineNumber: 75,
+        lineNumber: 80,
         columnNumber: 5
     }, this);
 }
 }),
 ];
 
-//# sourceMappingURL=app_%28Kambaz%29_Courses_%5Bcid%5D_10d1111d._.js.map
+//# sourceMappingURL=app_%28Kambaz%29_Courses_%5Bcid%5D_663dd238._.js.map

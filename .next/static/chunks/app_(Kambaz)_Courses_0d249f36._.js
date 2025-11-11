@@ -45,6 +45,79 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
+"[project]/app/(Kambaz)/Courses/client.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s([
+    "createCourse",
+    ()=>createCourse,
+    "createModuleForCourse",
+    ()=>createModuleForCourse,
+    "deleteCourse",
+    ()=>deleteCourse,
+    "deleteModule",
+    ()=>deleteModule,
+    "fetchAllCourses",
+    ()=>fetchAllCourses,
+    "findModulesForCourse",
+    ()=>findModulesForCourse,
+    "findMyCourses",
+    ()=>findMyCourses,
+    "updateCourse",
+    ()=>updateCourse,
+    "updateModule",
+    ()=>updateModule
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [app-client] (ecmascript)");
+;
+const axiosWithCredentials = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].create({
+    withCredentials: true
+});
+const HTTP_SERVER = ("TURBOPACK compile-time value", "http://localhost:4000");
+const COURSES_API = "".concat(HTTP_SERVER, "/api/courses");
+const USERS_API = "".concat(HTTP_SERVER, "/api/users");
+const fetchAllCourses = async ()=>{
+    const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get(COURSES_API);
+    return data;
+};
+const findMyCourses = async ()=>{
+    const { data } = await axiosWithCredentials.get("".concat(USERS_API, "/current/courses"));
+    return data;
+};
+const createCourse = async (course)=>{
+    const { data } = await axiosWithCredentials.post("".concat(USERS_API, "/current/courses"), course);
+    return data;
+};
+const deleteCourse = async (id)=>{
+    const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].delete("".concat(COURSES_API, "/").concat(id));
+    return data;
+};
+const updateCourse = async (course)=>{
+    const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].put("".concat(COURSES_API, "/").concat(course._id), course);
+    return data;
+};
+const findModulesForCourse = async (courseId)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get("".concat(COURSES_API, "/").concat(courseId, "/modules"));
+    return response.data;
+};
+const createModuleForCourse = async (courseId, module)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].post("".concat(COURSES_API, "/").concat(courseId, "/modules"), module);
+    return response.data;
+};
+const MODULES_API = "".concat(HTTP_SERVER, "/api/modules");
+const deleteModule = async (moduleId)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].delete("".concat(MODULES_API, "/").concat(moduleId));
+    return response.data;
+};
+const updateModule = async (module)=>{
+    const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].put("".concat(MODULES_API, "/").concat(module._id), module);
+    return data;
+};
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
 "[project]/app/(Kambaz)/Courses/[cid]/Assignments/page.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -67,11 +140,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-redux/dist/react-redux.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Assignments$2f$reducer$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(Kambaz)/Courses/[cid]/Assignments/reducer.ts [app-client] (ecmascript)");
-(()=>{
-    const e = new Error("Cannot find module '../client'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(Kambaz)/Courses/client.ts [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
@@ -101,7 +170,7 @@ function Assignments() {
     const { cid } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"])();
     const dispatch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDispatch"])();
     const fetchAssignments = async ()=>{
-        const assignments = await client.findAssignmentsForCourse(cid);
+        const assignments = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["findAssignmentsForCourse"](cid);
         dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Assignments$2f$reducer$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setAssignments"])(assignments));
     };
     useEffect({
@@ -447,4 +516,4 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 }),
 ]);
 
-//# sourceMappingURL=app_%28Kambaz%29_Courses_%5Bcid%5D_3c0a95f9._.js.map
+//# sourceMappingURL=app_%28Kambaz%29_Courses_0d249f36._.js.map
