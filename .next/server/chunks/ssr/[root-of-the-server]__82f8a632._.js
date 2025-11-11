@@ -213,6 +213,8 @@ module.exports = mod;
     ()=>__TURBOPACK__default__export__,
     "deleteCourse",
     ()=>deleteCourse,
+    "setCourses",
+    ()=>setCourses,
     "updateCourse",
     ()=>updateCourse
 ]);
@@ -245,10 +247,13 @@ const coursesSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
         },
         updateCourse: (state, { payload: course })=>{
             state.courses = state.courses.map((c)=>c._id === course._id ? course : c);
+        },
+        setCourses: (state, { payload: courses })=>{
+            state.courses = courses;
         }
     }
 });
-const { addNewCourse, deleteCourse, updateCourse } = coursesSlice.actions;
+const { addNewCourse, deleteCourse, updateCourse, setCourses } = coursesSlice.actions;
 const __TURBOPACK__default__export__ = coursesSlice.reducer;
 }),
 "[project]/app/(Kambaz)/Database/modules.json (json) <export default as modules>", ((__turbopack_context__) => {
@@ -642,7 +647,10 @@ function Session({ children }) {
             const currentUser = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Account$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["profile"]();
             dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$Kambaz$292f$Account$2f$reducer$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["setCurrentUser"])(currentUser));
         } catch (err) {
-            console.error(err);
+            // 401 means user is not logged in - this is expected and not an error
+            if (err.response?.status !== 401) {
+                console.error(err);
+            }
         }
         setPending(false);
     };
