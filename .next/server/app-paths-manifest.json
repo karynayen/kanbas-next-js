@@ -4,6 +4,8 @@
   "/(Kambaz)/Account/Signup/page": "app/(Kambaz)/Account/Signup/page.js",
   "/(Kambaz)/Account/page": "app/(Kambaz)/Account/page.js",
   "/(Kambaz)/Calendar/page": "app/(Kambaz)/Calendar/page.js",
+  "/(Kambaz)/Courses/[cid]/Home/page": "app/(Kambaz)/Courses/[cid]/Home/page.js",
+  "/(Kambaz)/Courses/[cid]/Modules/page": "app/(Kambaz)/Courses/[cid]/Modules/page.js",
   "/(Kambaz)/Dashboard/page": "app/(Kambaz)/Dashboard/page.js",
   "/(Kambaz)/Inbox/page": "app/(Kambaz)/Inbox/page.js",
   "/(Kambaz)/page": "app/(Kambaz)/page.js",

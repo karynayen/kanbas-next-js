@@ -5,10 +5,14 @@ module.exports = [
 /* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s([
     "createCourse",
     ()=>createCourse,
+    "createModuleForCourse",
+    ()=>createModuleForCourse,
     "deleteCourse",
     ()=>deleteCourse,
     "fetchAllCourses",
     ()=>fetchAllCourses,
+    "findModulesForCourse",
+    ()=>findModulesForCourse,
     "findMyCourses",
     ()=>findMyCourses,
     "updateCourse",
@@ -41,6 +45,14 @@ const deleteCourse = async (id)=>{
 const updateCourse = async (course)=>{
     const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].put(`${COURSES_API}/${course._id}`, course);
     return data;
+};
+const findModulesForCourse = async (courseId)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].get(`${COURSES_API}/${courseId}/modules`);
+    return response.data;
+};
+const createModuleForCourse = async (courseId, module)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${COURSES_API}/${courseId}/modules`, module);
+    return response.data;
 };
 }),
 "[project]/app/(Kambaz)/Dashboard/page.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {

@@ -5,10 +5,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s([
     "createCourse",
     ()=>createCourse,
+    "createModuleForCourse",
+    ()=>createModuleForCourse,
     "deleteCourse",
     ()=>deleteCourse,
     "fetchAllCourses",
     ()=>fetchAllCourses,
+    "findModulesForCourse",
+    ()=>findModulesForCourse,
     "findMyCourses",
     ()=>findMyCourses,
     "updateCourse",
@@ -42,6 +46,14 @@ const deleteCourse = async (id)=>{
 const updateCourse = async (course)=>{
     const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].put("".concat(COURSES_API, "/").concat(course._id), course);
     return data;
+};
+const findModulesForCourse = async (courseId)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get("".concat(COURSES_API, "/").concat(courseId, "/modules"));
+    return response.data;
+};
+const createModuleForCourse = async (courseId, module)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].post("".concat(COURSES_API, "/").concat(courseId, "/modules"), module);
+    return response.data;
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
