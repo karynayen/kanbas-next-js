@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["file:///Users/kyen/Desktop/kanbas-next-js/app/%28Kambaz%29/Courses/%5Bcid%5D/Grades/page.tsx"],"sourcesContent":["export default function Grades() {\n  return (\n    <div>\n      <h1>Grades</h1>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,iRAAC;kBACC,cAAA,iRAAC;sBAAG;;;;;;;;;;;AAGV","debugId":null}}]
+}

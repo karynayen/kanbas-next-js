@@ -503,6 +503,8 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     ()=>HTTP_SERVER,
     "USERS_API",
     ()=>USERS_API,
+    "findAllUsers",
+    ()=>findAllUsers,
     "profile",
     ()=>profile,
     "signin",
@@ -522,6 +524,10 @@ const axiosWithCredentials = __TURBOPACK__imported__module__$5b$project$5d2f$nod
 });
 const HTTP_SERVER = ("TURBOPACK compile-time value", "http://localhost:4000");
 const USERS_API = "".concat(HTTP_SERVER, "/api/users");
+const findAllUsers = async ()=>{
+    const response = await axiosWithCredentials.get(USERS_API);
+    return response.data;
+};
 const signin = async (credentials)=>{
     const response = await axiosWithCredentials.post("".concat(USERS_API, "/signin"), credentials);
     return response.data;
