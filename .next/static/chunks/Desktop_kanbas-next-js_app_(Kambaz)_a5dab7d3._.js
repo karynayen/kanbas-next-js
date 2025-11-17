@@ -503,8 +503,18 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     ()=>HTTP_SERVER,
     "USERS_API",
     ()=>USERS_API,
+    "createUser",
+    ()=>createUser,
+    "deleteUser",
+    ()=>deleteUser,
     "findAllUsers",
     ()=>findAllUsers,
+    "findUserById",
+    ()=>findUserById,
+    "findUsersByPartialName",
+    ()=>findUsersByPartialName,
+    "findUsersByRole",
+    ()=>findUsersByRole,
     "profile",
     ()=>profile,
     "signin",
@@ -546,6 +556,26 @@ const signout = async ()=>{
 };
 const updateUser = async (user)=>{
     const response = await axiosWithCredentials.put("".concat(USERS_API, "/").concat(user._id), user);
+    return response.data;
+};
+const findUsersByRole = async (role)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get("".concat(USERS_API, "?role=").concat(role));
+    return response.data;
+};
+const findUsersByPartialName = async (name)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get("".concat(USERS_API, "?name=").concat(name));
+    return response.data;
+};
+const findUserById = async (id)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get("".concat(USERS_API, "/").concat(id));
+    return response.data;
+};
+const deleteUser = async (userId)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].delete("".concat(USERS_API, "/").concat(userId));
+    return response.data;
+};
+const createUser = async (user)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].post("".concat(USERS_API), user);
     return response.data;
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {

@@ -571,8 +571,18 @@ module.exports = mod;
     ()=>HTTP_SERVER,
     "USERS_API",
     ()=>USERS_API,
+    "createUser",
+    ()=>createUser,
+    "deleteUser",
+    ()=>deleteUser,
     "findAllUsers",
     ()=>findAllUsers,
+    "findUserById",
+    ()=>findUserById,
+    "findUsersByPartialName",
+    ()=>findUsersByPartialName,
+    "findUsersByRole",
+    ()=>findUsersByRole,
     "profile",
     ()=>profile,
     "signin",
@@ -613,6 +623,26 @@ const signout = async ()=>{
 };
 const updateUser = async (user)=>{
     const response = await axiosWithCredentials.put(`${USERS_API}/${user._id}`, user);
+    return response.data;
+};
+const findUsersByRole = async (role)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].get(`${USERS_API}?role=${role}`);
+    return response.data;
+};
+const findUsersByPartialName = async (name)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].get(`${USERS_API}?name=${name}`);
+    return response.data;
+};
+const findUserById = async (id)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].get(`${USERS_API}/${id}`);
+    return response.data;
+};
+const deleteUser = async (userId)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].delete(`${USERS_API}/${userId}`);
+    return response.data;
+};
+const createUser = async (user)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${USERS_API}`, user);
     return response.data;
 };
 }),

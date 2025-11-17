@@ -193,6 +193,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/kanbas-next-js/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$People$2f$Table$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/People/Table/page.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Account$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/client.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$FormControl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__ = __turbopack_context__.i("[project]/Desktop/kanbas-next-js/node_modules/react-bootstrap/esm/FormControl.js [app-client] (ecmascript) <export default as FormControl>");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
@@ -200,9 +201,30 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 function Users() {
     _s();
     const [users, setUsers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]); // eslint-disable-line @typescript-eslint/no-explicit-any
+    const [role, setRole] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [name, setName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const filterUsersByName = async (name)=>{
+        setName(name);
+        if (name) {
+            const users = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Account$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["findUsersByPartialName"](name);
+            setUsers(users);
+        } else {
+            fetchUsers();
+        }
+    };
+    const filterUsersByRole = async (role)=>{
+        setRole(role);
+        if (role) {
+            const users = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Account$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["findUsersByRole"](role);
+            setUsers(users);
+        } else {
+            fetchUsers();
+        }
+    };
     const { uid } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"])();
     const fetchUsers = async ()=>{
         const users = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Account$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["findAllUsers"]();
@@ -221,7 +243,69 @@ function Users() {
                 children: "Users"
             }, void 0, false, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Users/page.tsx",
-                lineNumber: 18,
+                lineNumber: 42,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$FormControl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
+                onChange: (e)=>filterUsersByName(e.target.value),
+                placeholder: "Search people",
+                className: "float-start w-25 me-2 wd-filter-by-name"
+            }, void 0, false, {
+                fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Users/page.tsx",
+                lineNumber: 44,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                value: role,
+                onChange: (e)=>filterUsersByRole(e.target.value),
+                className: "form-select float-start w-25 wd-select-role",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                        value: "",
+                        children: "All Roles"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Users/page.tsx",
+                        lineNumber: 54,
+                        columnNumber: 9
+                    }, this),
+                    ' ',
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                        value: "STUDENT",
+                        children: "Students"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Users/page.tsx",
+                        lineNumber: 55,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                        value: "TA",
+                        children: "Assistants"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Users/page.tsx",
+                        lineNumber: 56,
+                        columnNumber: 9
+                    }, this),
+                    ' ',
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                        value: "FACULTY",
+                        children: "Faculty"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Users/page.tsx",
+                        lineNumber: 57,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                        value: "ADMIN",
+                        children: "Administrators"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Users/page.tsx",
+                        lineNumber: 58,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Users/page.tsx",
+                lineNumber: 49,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$People$2f$Table$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -229,17 +313,17 @@ function Users() {
                 fetchUsers: fetchUsers
             }, void 0, false, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Users/page.tsx",
-                lineNumber: 19,
+                lineNumber: 60,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Users/page.tsx",
-        lineNumber: 17,
+        lineNumber: 41,
         columnNumber: 5
     }, this);
 }
-_s(Users, "QxclG4LppMVUXGvO24R5F5AYUBI=", false, function() {
+_s(Users, "PHAQT9Iu0ds5H36L5jsS5qDWpf4=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"]
     ];
