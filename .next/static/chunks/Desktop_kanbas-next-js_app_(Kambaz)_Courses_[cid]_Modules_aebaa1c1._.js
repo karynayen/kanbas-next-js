@@ -500,10 +500,14 @@ function Modules() {
     const { modules } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"])({
         "Modules.useSelector": (state)=>state.modulesReducer
     }["Modules.useSelector"]);
+    const { currentUser } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"])({
+        "Modules.useSelector": (state)=>state.accountReducer
+    }["Modules.useSelector"]);
     const dispatch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDispatch"])();
+    const isFaculty = (currentUser === null || currentUser === void 0 ? void 0 : currentUser.role) === 'FACULTY';
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Modules$2f$ModulesControls$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+            isFaculty && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Modules$2f$ModulesControls$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 setModuleName: setModuleName,
                 moduleName: moduleName,
                 addModule: ()=>{
@@ -515,27 +519,27 @@ function Modules() {
                 }
             }, void 0, false, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                lineNumber: 24,
+                lineNumber: 27,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                lineNumber: 32,
+                lineNumber: 37,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                lineNumber: 33,
+                lineNumber: 38,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                lineNumber: 34,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                lineNumber: 35,
+                lineNumber: 39,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$ListGroup$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ListGroup$3e$__["ListGroup"], {
@@ -551,7 +555,7 @@ function Modules() {
                                         className: "me-2 fs-3"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                                        lineNumber: 45,
+                                        lineNumber: 49,
                                         columnNumber: 17
                                     }, this),
                                     !module.editing && module.name,
@@ -572,22 +576,22 @@ function Modules() {
                                         defaultValue: module.name
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                                        lineNumber: 48,
+                                        lineNumber: 52,
                                         columnNumber: 19
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Modules$2f$ModuleControlButtons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    isFaculty && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Modules$2f$ModuleControlButtons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         moduleId: module._id,
                                         deleteModule: ()=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Modules$2f$reducer$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["deleteModule"])(module._id)),
                                         editModule: (moduleId)=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Modules$2f$reducer$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["editModule"])(moduleId))
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                                        lineNumber: 63,
-                                        columnNumber: 17
+                                        lineNumber: 68,
+                                        columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                                lineNumber: 44,
+                                lineNumber: 48,
                                 columnNumber: 15
                             }, this),
                             module.lessons && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$ListGroup$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ListGroup$3e$__["ListGroup"], {
@@ -599,7 +603,7 @@ function Modules() {
                                                 className: "me-2 fs-3"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                                                lineNumber: 76,
+                                                lineNumber: 82,
                                                 columnNumber: 23
                                             }, this),
                                             " ",
@@ -607,41 +611,42 @@ function Modules() {
                                             ' ',
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Modules$2f$LessonControlButtons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                                                lineNumber: 77,
+                                                lineNumber: 83,
                                                 columnNumber: 23
                                             }, this)
                                         ]
                                     }, lesson._id, true, {
                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                                        lineNumber: 72,
+                                        lineNumber: 78,
                                         columnNumber: 21
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                                lineNumber: 70,
+                                lineNumber: 76,
                                 columnNumber: 17
                             }, this)
                         ]
                     }, module._id, true, {
                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                        lineNumber: 40,
+                        lineNumber: 44,
                         columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-                lineNumber: 36,
+                lineNumber: 40,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Modules/page.tsx",
-        lineNumber: 23,
+        lineNumber: 25,
         columnNumber: 5
     }, this);
 }
-_s(Modules, "EtbnmcMFAu0RVRDu4uAYG3SSdB0=", false, function() {
+_s(Modules, "QXvhFBGmFE2icTVymgGXkkEo1fQ=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"],
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"],
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDispatch"]
     ];

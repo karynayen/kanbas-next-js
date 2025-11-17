@@ -2,7 +2,7 @@
 "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.s([
+/* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s([
     "default",
     ()=>AssignmentEditor
 ]);
@@ -43,14 +43,30 @@ function AssignmentEditor() {
     const { assignments } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"])({
         "AssignmentEditor.useSelector": (state)=>state.assignmentsReducer
     }["AssignmentEditor.useSelector"]);
+    const { currentUser } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"])({
+        "AssignmentEditor.useSelector": (state)=>state.accountReducer
+    }["AssignmentEditor.useSelector"]);
     const isNewAssignment = aid === 'new';
     const existingAssignment = !isNewAssignment ? assignments.find((a)=>a._id === aid) : null;
+    const isFaculty = (currentUser === null || currentUser === void 0 ? void 0 : currentUser.role) === 'FACULTY';
     const [title, setTitle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [description, setDescription] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [points, setPoints] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(100);
     const [dueDate, setDueDate] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('2024-05-13T23:59');
     const [availableFromDate, setAvailableFromDate] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('2024-05-06T00:00');
     const [availableUntilDate, setAvailableUntilDate] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('2024-05-20T23:59');
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "AssignmentEditor.useEffect": ()=>{
+            if (currentUser && !isFaculty) {
+                router.push("/Courses/".concat(cid, "/Assignments"));
+            }
+        }
+    }["AssignmentEditor.useEffect"], [
+        currentUser,
+        isFaculty,
+        router,
+        cid
+    ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AssignmentEditor.useEffect": ()=>{
             if (existingAssignment) {
@@ -65,6 +81,9 @@ function AssignmentEditor() {
     }["AssignmentEditor.useEffect"], [
         existingAssignment
     ]);
+    if (currentUser && !isFaculty) {
+        return null;
+    }
     const handleSave = ()=>{
         const assignmentData = {
             _id: existingAssignment === null || existingAssignment === void 0 ? void 0 : existingAssignment._id,
@@ -99,7 +118,7 @@ function AssignmentEditor() {
                             children: "Assignment Name"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                            lineNumber: 98,
+                            lineNumber: 111,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Control, {
@@ -108,13 +127,13 @@ function AssignmentEditor() {
                             onChange: (e)=>setTitle(e.target.value)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                            lineNumber: 99,
+                            lineNumber: 112,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                    lineNumber: 97,
+                    lineNumber: 110,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Group, {
@@ -127,12 +146,12 @@ function AssignmentEditor() {
                         onChange: (e)=>setDescription(e.target.value)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                        lineNumber: 107,
+                        lineNumber: 120,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                    lineNumber: 106,
+                    lineNumber: 119,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Row$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Row$3e$__["Row"], {
@@ -146,12 +165,12 @@ function AssignmentEditor() {
                                 children: "Points"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                lineNumber: 117,
+                                lineNumber: 130,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                            lineNumber: 116,
+                            lineNumber: 129,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
@@ -163,72 +182,6 @@ function AssignmentEditor() {
                                 onChange: (e)=>setPoints(Number(e.target.value)),
                                 className: "w-100"
                             }, void 0, false, {
-                                fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                lineNumber: 120,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                            lineNumber: 119,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
-                            md: 3,
-                            className: "text-md-end",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Label, {
-                                className: "mt-2",
-                                children: "Assignment Group"
-                            }, void 0, false, {
-                                fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                lineNumber: 130,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                            lineNumber: 129,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
-                            md: 9,
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Select, {
-                                id: "wd-group",
-                                defaultValue: "ASSIGNMENTS",
-                                className: "w-100",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "ASSIGNMENTS",
-                                        children: "ASSIGNMENTS"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                        lineNumber: 138,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "QUIZZES",
-                                        children: "QUIZZES"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                        lineNumber: 139,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "EXAMS",
-                                        children: "EXAMS"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                        lineNumber: 140,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                        value: "PROJECTS",
-                                        children: "PROJECTS"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                        lineNumber: 141,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
                                 lineNumber: 133,
                                 columnNumber: 13
@@ -243,8 +196,58 @@ function AssignmentEditor() {
                             className: "text-md-end",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Label, {
                                 className: "mt-2",
-                                children: "Display Grade as"
+                                children: "Assignment Group"
                             }, void 0, false, {
+                                fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
+                                lineNumber: 143,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
+                            lineNumber: 142,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
+                            md: 9,
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Select, {
+                                id: "wd-group",
+                                defaultValue: "ASSIGNMENTS",
+                                className: "w-100",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                        value: "ASSIGNMENTS",
+                                        children: "ASSIGNMENTS"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
+                                        lineNumber: 151,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                        value: "QUIZZES",
+                                        children: "QUIZZES"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
+                                        lineNumber: 152,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                        value: "EXAMS",
+                                        children: "EXAMS"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
+                                        lineNumber: 153,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                        value: "PROJECTS",
+                                        children: "PROJECTS"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
+                                        lineNumber: 154,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
                                 lineNumber: 146,
                                 columnNumber: 13
@@ -252,6 +255,22 @@ function AssignmentEditor() {
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
                             lineNumber: 145,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
+                            md: 3,
+                            className: "text-md-end",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Label, {
+                                className: "mt-2",
+                                children: "Display Grade as"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
+                                lineNumber: 159,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
+                            lineNumber: 158,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
@@ -266,7 +285,7 @@ function AssignmentEditor() {
                                         children: "Percentage"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 167,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -274,18 +293,18 @@ function AssignmentEditor() {
                                         children: "Decimal"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                        lineNumber: 155,
+                                        lineNumber: 168,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                lineNumber: 149,
+                                lineNumber: 162,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                            lineNumber: 148,
+                            lineNumber: 161,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
@@ -296,12 +315,12 @@ function AssignmentEditor() {
                                 children: "Submission Type"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                lineNumber: 160,
+                                lineNumber: 173,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                            lineNumber: 159,
+                            lineNumber: 172,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
@@ -319,7 +338,7 @@ function AssignmentEditor() {
                                                 children: "Online"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 169,
+                                                lineNumber: 182,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -327,13 +346,13 @@ function AssignmentEditor() {
                                                 children: "In Person"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 170,
+                                                lineNumber: 183,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                        lineNumber: 164,
+                                        lineNumber: 177,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -341,7 +360,7 @@ function AssignmentEditor() {
                                         children: "Online Entry Options"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                        lineNumber: 173,
+                                        lineNumber: 186,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -353,7 +372,7 @@ function AssignmentEditor() {
                                                 label: "Text Entry"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 175,
+                                                lineNumber: 188,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Check, {
@@ -363,7 +382,7 @@ function AssignmentEditor() {
                                                 defaultChecked: true
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 180,
+                                                lineNumber: 193,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Check, {
@@ -372,7 +391,7 @@ function AssignmentEditor() {
                                                 label: "Media Recordings"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 186,
+                                                lineNumber: 199,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Check, {
@@ -381,7 +400,7 @@ function AssignmentEditor() {
                                                 label: "Student Annotation"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 191,
+                                                lineNumber: 204,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Check, {
@@ -390,24 +409,24 @@ function AssignmentEditor() {
                                                 label: "File Uploads"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 196,
+                                                lineNumber: 209,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                        lineNumber: 174,
+                                        lineNumber: 187,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                lineNumber: 163,
+                                lineNumber: 176,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                            lineNumber: 162,
+                            lineNumber: 175,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
@@ -418,12 +437,12 @@ function AssignmentEditor() {
                                 children: "Assign"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                lineNumber: 206,
+                                lineNumber: 219,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                            lineNumber: 205,
+                            lineNumber: 218,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
@@ -440,7 +459,7 @@ function AssignmentEditor() {
                                                 children: "Assign to"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 211,
+                                                lineNumber: 224,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -453,7 +472,7 @@ function AssignmentEditor() {
                                                             children: "Everyone"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                            lineNumber: 214,
+                                                            lineNumber: 227,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -461,24 +480,24 @@ function AssignmentEditor() {
                                                             children: "×"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                            lineNumber: 215,
+                                                            lineNumber: 228,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                    lineNumber: 213,
+                                                    lineNumber: 226,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 212,
+                                                lineNumber: 225,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                        lineNumber: 210,
+                                        lineNumber: 223,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Form$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Form$3e$__["Form"].Group, {
@@ -490,7 +509,7 @@ function AssignmentEditor() {
                                                 children: "Due"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 221,
+                                                lineNumber: 234,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$InputGroup$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__InputGroup$3e$__["InputGroup"], {
@@ -501,7 +520,7 @@ function AssignmentEditor() {
                                                         onChange: (e)=>setDueDate(e.target.value)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                        lineNumber: 223,
+                                                        lineNumber: 236,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$InputGroup$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__InputGroup$3e$__["InputGroup"].Text, {
@@ -510,24 +529,24 @@ function AssignmentEditor() {
                                                             className: "text-secondary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                            lineNumber: 229,
+                                                            lineNumber: 242,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                        lineNumber: 228,
+                                                        lineNumber: 241,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 222,
+                                                lineNumber: 235,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                        lineNumber: 220,
+                                        lineNumber: 233,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Row$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Row$3e$__["Row"], {
@@ -543,7 +562,7 @@ function AssignmentEditor() {
                                                             children: "Available from"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                            lineNumber: 237,
+                                                            lineNumber: 250,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$InputGroup$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__InputGroup$3e$__["InputGroup"], {
@@ -554,7 +573,7 @@ function AssignmentEditor() {
                                                                     onChange: (e)=>setAvailableFromDate(e.target.value)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                                    lineNumber: 241,
+                                                                    lineNumber: 254,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$InputGroup$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__InputGroup$3e$__["InputGroup"].Text, {
@@ -563,29 +582,29 @@ function AssignmentEditor() {
                                                                         className: "text-secondary"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                                        lineNumber: 247,
+                                                                        lineNumber: 260,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                                    lineNumber: 246,
+                                                                    lineNumber: 259,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                            lineNumber: 240,
+                                                            lineNumber: 253,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                    lineNumber: 236,
+                                                    lineNumber: 249,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 235,
+                                                lineNumber: 248,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
@@ -598,7 +617,7 @@ function AssignmentEditor() {
                                                             children: "Until"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                            lineNumber: 254,
+                                                            lineNumber: 267,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$InputGroup$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__InputGroup$3e$__["InputGroup"], {
@@ -609,7 +628,7 @@ function AssignmentEditor() {
                                                                     onChange: (e)=>setAvailableUntilDate(e.target.value)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                                    lineNumber: 256,
+                                                                    lineNumber: 269,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$InputGroup$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__InputGroup$3e$__["InputGroup"].Text, {
@@ -618,57 +637,57 @@ function AssignmentEditor() {
                                                                         className: "text-secondary"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                                        lineNumber: 262,
+                                                                        lineNumber: 275,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                                    lineNumber: 261,
+                                                                    lineNumber: 274,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                            lineNumber: 255,
+                                                            lineNumber: 268,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                    lineNumber: 253,
+                                                    lineNumber: 266,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                                lineNumber: 252,
+                                                lineNumber: 265,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                        lineNumber: 234,
+                                        lineNumber: 247,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                                lineNumber: 209,
+                                lineNumber: 222,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                            lineNumber: 208,
+                            lineNumber: 221,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                    lineNumber: 115,
+                    lineNumber: 128,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {}, void 0, false, {
                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                    lineNumber: 272,
+                    lineNumber: 285,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -682,7 +701,7 @@ function AssignmentEditor() {
                             children: "Cancel"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                            lineNumber: 274,
+                            lineNumber: 287,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -692,32 +711,33 @@ function AssignmentEditor() {
                             children: "Save"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                            lineNumber: 282,
+                            lineNumber: 295,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-                    lineNumber: 273,
+                    lineNumber: 286,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-            lineNumber: 96,
+            lineNumber: 109,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Courses/[cid]/Assignments/[aid]/page.tsx",
-        lineNumber: 95,
+        lineNumber: 108,
         columnNumber: 5
     }, this);
 }
-_s(AssignmentEditor, "tO4ymDKY8Bqt7fxnhuNIbZKQgpI=", false, function() {
+_s(AssignmentEditor, "YDwH0tJPaSy7ydmXAR4ohRV+7MY=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"],
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDispatch"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"],
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"]
     ];
 });

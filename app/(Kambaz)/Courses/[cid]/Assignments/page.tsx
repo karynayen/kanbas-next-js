@@ -145,18 +145,12 @@ export default function Assignments() {
             <BsGripVertical className="me-0 fs-3 text-secondary" />
             <IoNewspaperOutline className="text-success me-3 fs-5" />
             <div className="flex-fill">
-              {!isStudent ? (
-                <Link
-                  href={`/Courses/${cid}/Assignments/${assignment._id}`}
-                  className="wd-assignment-link fw-bold text-decoration-none text-dark"
-                >
-                  {assignment.title}
-                </Link>
-              ) : (
-                <span className="wd-assignment-link fw-bold text-dark">
-                  {assignment.title}
-                </span>
-              )}
+              <Link
+                href={`/Courses/${cid}/Assignments/${assignment._id}`}
+                className="wd-assignment-link fw-bold text-decoration-none text-dark"
+              >
+                {assignment.title}
+              </Link>
               <div className="text-muted small mt-1">
                 <span className="text-danger">Multiple Modules</span> |{' '}
                 <strong>Not available until</strong>{' '}
