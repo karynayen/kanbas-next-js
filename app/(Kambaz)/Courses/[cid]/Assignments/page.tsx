@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import Link from 'next/link';
 import {
@@ -49,9 +50,12 @@ export default function Assignments() {
     (state: { assignmentsReducer: { assignments: Assignment[] } }) =>
       state.assignmentsReducer
   );
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
   const courseAssignments = assignments.filter(
     (assignment) => assignment.course === cid
   );
+  const isFaculty = currentUser?.role === 'FACULTY';
+  const isStudent = currentUser?.role === 'STUDENT';
 
   const handleDelete = (assignmentId: string, assignmentTitle: string) => {
     const confirmed = window.confirm(
@@ -77,32 +81,36 @@ export default function Assignments() {
             />
           </InputGroup>
         </div>
-        <Link href={`/Courses/${cid}/Assignments/new`}>
-          <Button
-            id="wd-add-assignment"
-            variant="danger"
-            size="lg"
-            className="float-end ms-2 text-nowrap border wd-header-action"
-          >
-            <FaPlus
-              className="me-2 position-relative"
-              style={{ bottom: '1px' }}
-            />
-            Assignment
-          </Button>
-        </Link>
-        <Button
-          id="wd-add-assignment-group"
-          variant="secondary"
-          size="lg"
-          className="float-end text-nowrap border wd-header-action"
-        >
-          <FaPlus
-            className="me-2 position-relative"
-            style={{ bottom: '1px' }}
-          />
-          Group
-        </Button>
+        {!isStudent && (
+          <>
+            <Link href={`/Courses/${cid}/Assignments/new`}>
+              <Button
+                id="wd-add-assignment"
+                variant="danger"
+                size="lg"
+                className="float-end ms-2 text-nowrap border wd-header-action"
+              >
+                <FaPlus
+                  className="me-2 position-relative"
+                  style={{ bottom: '1px' }}
+                />
+                Assignment
+              </Button>
+            </Link>
+            <Button
+              id="wd-add-assignment-group"
+              variant="secondary"
+              size="lg"
+              className="float-end text-nowrap border wd-header-action"
+            >
+              <FaPlus
+                className="me-2 position-relative"
+                style={{ bottom: '1px' }}
+              />
+              Group
+            </Button>
+          </>
+        )}
       </div>
 
       <div className="d-flex align-items-center justify-content-between mt-4 mb-0 p-3 ps-2 wd-assignments-header">
@@ -137,12 +145,18 @@ export default function Assignments() {
             <BsGripVertical className="me-0 fs-3 text-secondary" />
             <IoNewspaperOutline className="text-success me-3 fs-5" />
             <div className="flex-fill">
-              <Link
-                href={`/Courses/${cid}/Assignments/${assignment._id}`}
-                className="wd-assignment-link fw-bold text-decoration-none text-dark"
-              >
-                {assignment.title}
-              </Link>
+              {!isStudent ? (
+                <Link
+                  href={`/Courses/${cid}/Assignments/${assignment._id}`}
+                  className="wd-assignment-link fw-bold text-decoration-none text-dark"
+                >
+                  {assignment.title}
+                </Link>
+              ) : (
+                <span className="wd-assignment-link fw-bold text-dark">
+                  {assignment.title}
+                </span>
+              )}
               <div className="text-muted small mt-1">
                 <span className="text-danger">Multiple Modules</span> |{' '}
                 <strong>Not available until</strong>{' '}
@@ -152,11 +166,13 @@ export default function Assignments() {
               </div>
             </div>
             <div className="ms-2 d-flex align-items-center">
-              <FaTrash
-                className="text-danger me-2"
-                style={{ cursor: 'pointer' }}
-                onClick={() => handleDelete(assignment._id, assignment.title)}
-              />
+              {!isStudent && (
+                <FaTrash
+                  className="text-danger me-2"
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => handleDelete(assignment._id, assignment.title)}
+                />
+              )}
               <GreenCheckmark />
               <BsThreeDotsVertical className="ms-2 text-secondary" />
             </div>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { Form, Row, Col, Button, InputGroup } from 'react-bootstrap';
@@ -37,11 +38,13 @@ export default function AssignmentEditor() {
       };
     }) => state.assignmentsReducer
   );
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
 
   const isNewAssignment = aid === 'new';
   const existingAssignment = !isNewAssignment
     ? assignments.find((a) => a._id === aid)
     : null;
+  const isFaculty = currentUser?.role === 'FACULTY';
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -51,6 +54,12 @@ export default function AssignmentEditor() {
     useState('2024-05-06T00:00');
   const [availableUntilDate, setAvailableUntilDate] =
     useState('2024-05-20T23:59');
+
+  useEffect(() => {
+    if (currentUser && !isFaculty) {
+      router.push(`/Courses/${cid}/Assignments`);
+    }
+  }, [currentUser, isFaculty, router, cid]);
 
   useEffect(() => {
     if (existingAssignment) {
@@ -66,6 +75,10 @@ export default function AssignmentEditor() {
       );
     }
   }, [existingAssignment]);
+
+  if (currentUser && !isFaculty) {
+    return null;
+  }
 
   const handleSave = () => {
     const assignmentData = {
