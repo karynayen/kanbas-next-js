@@ -60,12 +60,12 @@ const createModuleForCourse = async (courseId, module)=>{
     return response.data;
 };
 const MODULES_API = "".concat(HTTP_SERVER, "/api/modules");
-const deleteModule = async (moduleId)=>{
-    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].delete("".concat(MODULES_API, "/").concat(moduleId));
+const deleteModule = async (courseId, moduleId)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].delete("".concat(COURSES_API, "/").concat(courseId, "/modules/").concat(moduleId));
     return response.data;
 };
-const updateModule = async (module)=>{
-    const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].put("".concat(MODULES_API, "/").concat(module._id), module);
+const updateModule = async (courseId, module)=>{
+    const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].put("".concat(COURSES_API, "/").concat(courseId, "/modules/").concat(module._id), module);
     return data;
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -593,11 +593,11 @@ function Modules() {
         dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Modules$2f$reducer$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setModules"])(modules));
     };
     const onRemoveModule = async (moduleId)=>{
-        await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["deleteModule"](moduleId);
+        await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["deleteModule"](cid, moduleId);
         dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Modules$2f$reducer$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setModules"])(modules.filter((m)=>m._id !== moduleId)));
     };
     const onUpdateModule = async (module)=>{
-        await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["updateModule"](module);
+        await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["updateModule"](cid, module);
         const newModules = modules.map((m)=>m._id === module._id ? module : m);
         dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Courses$2f5b$cid$5d2f$Modules$2f$reducer$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setModules"])(newModules));
     };

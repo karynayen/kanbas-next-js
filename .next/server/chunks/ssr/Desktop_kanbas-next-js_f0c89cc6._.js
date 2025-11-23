@@ -59,12 +59,12 @@ const createModuleForCourse = async (courseId, module)=>{
     return response.data;
 };
 const MODULES_API = `${HTTP_SERVER}/api/modules`;
-const deleteModule = async (moduleId)=>{
-    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].delete(`${MODULES_API}/${moduleId}`);
+const deleteModule = async (courseId, moduleId)=>{
+    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].delete(`${COURSES_API}/${courseId}/modules/${moduleId}`);
     return response.data;
 };
-const updateModule = async (module)=>{
-    const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].put(`${MODULES_API}/${module._id}`, module);
+const updateModule = async (courseId, module)=>{
+    const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].put(`${COURSES_API}/${courseId}/modules/${module._id}`, module);
     return data;
 };
 }),
