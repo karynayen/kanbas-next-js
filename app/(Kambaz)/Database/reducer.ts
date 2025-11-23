@@ -14,18 +14,13 @@ const enrollmentsSlice = createSlice({
     setEnrollments: (state, { payload: enrollments }) => {
       state.enrollments = enrollments;
     },
-    enrollInCourse: (state, { payload: { userId, courseId } }) => {
-      const newEnrollment = {
-        _id: uuidv4(),
-        user: userId,
-        course: courseId,
-      };
-      state.enrollments = [...state.enrollments, newEnrollment] as any;
+    enrollInCourse: (state, { payload: enrollment }) => {
+      state.enrollments = [...state.enrollments, enrollment] as any;
     },
     unenrollFromCourse: (state, { payload: { userId, courseId } }) => {
       state.enrollments = state.enrollments.filter(
         (enrollment: any) =>
-          !(enrollment.user === userId && enrollment.course === courseId)
+          !(enrollment.user === userId && enrollment.course._id === courseId)
       );
     },
   },

@@ -85,7 +85,6 @@ export default function Dashboard() {
     if (!currentUser) return false;
     return enrollments.some((enrollment: any) => {
       return (
-        enrollment.status === 'ENROLLED' &&
         enrollment.user === currentUser._id &&
         enrollment.course._id === courseId
       );
@@ -95,9 +94,13 @@ export default function Dashboard() {
   const handleEnroll = async (courseId: string) => {
     if (!currentUser) return;
     try {
-      await enrollmentClient.enrollIntoCourse(currentUser._id, courseId);
-      dispatch(enrollInCourse({ userId: currentUser._id, courseId }));
-      await fetchCourses(); // Refresh courses after enrollment
+      const enrollment = await enrollmentClient.enrollIntoCourse(
+        currentUser._id,
+        courseId
+      );
+      dispatch(enrollInCourse(enrollment));
+      await fetchEnrollments();
+      await fetchCourses();
     } catch (error) {
       console.error('Failed to enroll:', error);
     }
@@ -108,7 +111,8 @@ export default function Dashboard() {
     try {
       await enrollmentClient.unenrollFromCourse(currentUser._id, courseId);
       dispatch(unenrollFromCourse({ userId: currentUser._id, courseId }));
-      await fetchCourses(); // Refresh courses after unenrollment
+      await fetchEnrollments();
+      await fetchCourses();
     } catch (error) {
       console.error('Failed to unenroll:', error);
     }

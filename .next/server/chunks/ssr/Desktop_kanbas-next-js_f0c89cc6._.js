@@ -196,18 +196,16 @@ function Dashboard() {
     const isEnrolled = (courseId)=>{
         if (!currentUser) return false;
         return enrollments.some((enrollment)=>{
-            return enrollment.status === 'ENROLLED' && enrollment.user === currentUser._id && enrollment.course._id === courseId;
+            return enrollment.user === currentUser._id && enrollment.course._id === courseId;
         });
     };
     const handleEnroll = async (courseId)=>{
         if (!currentUser) return;
         try {
-            await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Dashboard$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["enrollIntoCourse"](currentUser._id, courseId);
-            dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Database$2f$reducer$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["enrollInCourse"])({
-                userId: currentUser._id,
-                courseId
-            }));
-            await fetchCourses(); // Refresh courses after enrollment
+            const enrollment = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Dashboard$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["enrollIntoCourse"](currentUser._id, courseId);
+            dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$app$2f28$Kambaz$292f$Database$2f$reducer$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["enrollInCourse"])(enrollment));
+            await fetchEnrollments();
+            await fetchCourses();
         } catch (error) {
             console.error('Failed to enroll:', error);
         }
@@ -220,7 +218,8 @@ function Dashboard() {
                 userId: currentUser._id,
                 courseId
             }));
-            await fetchCourses(); // Refresh courses after unenrollment
+            await fetchEnrollments();
+            await fetchCourses();
         } catch (error) {
             console.error('Failed to unenroll:', error);
         }
@@ -260,18 +259,18 @@ function Dashboard() {
                         children: showAllCourses ? 'My Courses' : 'Enrollments'
                     }, void 0, false, {
                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                        lineNumber: 148,
+                        lineNumber: 152,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                lineNumber: 145,
+                lineNumber: 149,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {}, void 0, false, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                lineNumber: 157,
+                lineNumber: 161,
                 columnNumber: 7
             }, this),
             isFaculty && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -290,7 +289,7 @@ function Dashboard() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                lineNumber: 162,
+                                lineNumber: 166,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -303,18 +302,18 @@ function Dashboard() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                lineNumber: 170,
+                                lineNumber: 174,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                        lineNumber: 160,
+                        lineNumber: 164,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                        lineNumber: 178,
+                        lineNumber: 182,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$FormControl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
@@ -326,7 +325,7 @@ function Dashboard() {
                             })
                     }, void 0, false, {
                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                        lineNumber: 179,
+                        lineNumber: 183,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$FormControl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
@@ -339,12 +338,12 @@ function Dashboard() {
                             })
                     }, void 0, false, {
                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                        lineNumber: 184,
+                        lineNumber: 188,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {}, void 0, false, {
                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                        lineNumber: 192,
+                        lineNumber: 196,
                         columnNumber: 11
                     }, this)
                 ]
@@ -358,13 +357,13 @@ function Dashboard() {
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                lineNumber: 195,
+                lineNumber: 199,
                 columnNumber: 7
             }, this),
             ' ',
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {}, void 0, false, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                lineNumber: 196,
+                lineNumber: 200,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -390,7 +389,7 @@ function Dashboard() {
                                             height: 160
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                            lineNumber: 210,
+                                            lineNumber: 214,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$CardBody$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CardBody$3e$__["CardBody"], {
@@ -404,7 +403,7 @@ function Dashboard() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                                    lineNumber: 217,
+                                                    lineNumber: 221,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$CardText$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CardText$3e$__["CardText"], {
@@ -418,7 +417,7 @@ function Dashboard() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                                    lineNumber: 220,
+                                                    lineNumber: 224,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Button$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -426,7 +425,7 @@ function Dashboard() {
                                                     children: " Go "
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                                    lineNumber: 226,
+                                                    lineNumber: 230,
                                                     columnNumber: 21
                                                 }, this),
                                                 isFaculty && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -441,7 +440,7 @@ function Dashboard() {
                                                             children: "Delete"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                                            lineNumber: 229,
+                                                            lineNumber: 233,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -454,7 +453,7 @@ function Dashboard() {
                                                             children: "Edit"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                                            lineNumber: 239,
+                                                            lineNumber: 243,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
@@ -469,7 +468,7 @@ function Dashboard() {
                                                         children: "Unenroll"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                                        lineNumber: 254,
+                                                        lineNumber: 258,
                                                         columnNumber: 27
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         onClick: (event)=>{
@@ -480,46 +479,46 @@ function Dashboard() {
                                                         children: "Enroll"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                                        lineNumber: 264,
+                                                        lineNumber: 268,
                                                         columnNumber: 27
                                                     }, this)
                                                 }, void 0, false)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                            lineNumber: 216,
+                                            lineNumber: 220,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                    lineNumber: 206,
+                                    lineNumber: 210,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                                lineNumber: 205,
+                                lineNumber: 209,
                                 columnNumber: 15
                             }, this)
                         }, course._id, false, {
                             fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                            lineNumber: 200,
+                            lineNumber: 204,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                    lineNumber: 198,
+                    lineNumber: 202,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-                lineNumber: 197,
+                lineNumber: 201,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Dashboard/page.tsx",
-        lineNumber: 144,
+        lineNumber: 148,
         columnNumber: 5
     }, this);
 }
