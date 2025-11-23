@@ -8,7 +8,7 @@
   "static/chunks/5bf6b_react-icons_lib_d8e4e283._.js",
   "static/chunks/5bf6b_axios_lib_c5762921._.js",
   "static/chunks/5bf6b_05743ac9._.js",
-  "static/chunks/Desktop_kanbas-next-js_app_(Kambaz)_a5dab7d3._.js",
+  "static/chunks/Desktop_kanbas-next-js_app_(Kambaz)_c4e2d74f._.js",
   "static/chunks/Desktop_kanbas-next-js_app_(Kambaz)_styles_4f39e6e7.css"
 ],
     source: "dynamic"

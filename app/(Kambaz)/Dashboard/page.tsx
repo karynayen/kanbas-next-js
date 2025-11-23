@@ -22,7 +22,11 @@ import {
   updateCourse,
   setCourses,
 } from '../Courses/reducer';
-import { enrollInCourse, unenrollFromCourse } from '../Database/reducer';
+import {
+  enrollInCourse,
+  setEnrollments,
+  unenrollFromCourse,
+} from '../Database/reducer';
 
 export default function Dashboard() {
   const { currentUser } = useSelector((state: any) => state.accountReducer);
@@ -31,6 +35,20 @@ export default function Dashboard() {
 
   const dispatch = useDispatch();
   const [showAllCourses, setShowAllCourses] = useState(false);
+
+  const fetchEnrollments = async () => {
+    if (!currentUser) return;
+    const enrollments = await enrollmentClient.findEnrollmentsForUser(
+      currentUser._id
+    );
+    dispatch(setEnrollments(enrollments));
+  };
+
+  useEffect(() => {
+    if (currentUser) {
+      fetchEnrollments();
+    }
+  }, [currentUser]);
 
   const fetchCourses = async () => {
     try {
@@ -65,16 +83,19 @@ export default function Dashboard() {
 
   const isEnrolled = (courseId: string) => {
     if (!currentUser) return false;
-    return enrollments.some(
-      (enrollment: any) =>
-        enrollment.user === currentUser._id && enrollment.course === courseId
-    );
+    return enrollments.some((enrollment: any) => {
+      return (
+        enrollment.status === 'ENROLLED' &&
+        enrollment.user === currentUser._id &&
+        enrollment.course._id === courseId
+      );
+    });
   };
 
   const handleEnroll = async (courseId: string) => {
     if (!currentUser) return;
     try {
-      await enrollmentClient.enrollUserInCourse(currentUser._id, courseId);
+      await enrollmentClient.enrollIntoCourse(currentUser._id, courseId);
       dispatch(enrollInCourse({ userId: currentUser._id, courseId }));
       await fetchCourses(); // Refresh courses after enrollment
     } catch (error) {
@@ -85,7 +106,7 @@ export default function Dashboard() {
   const handleUnenroll = async (courseId: string) => {
     if (!currentUser) return;
     try {
-      await enrollmentClient.unenrollUserFromCourse(currentUser._id, courseId);
+      await enrollmentClient.unenrollFromCourse(currentUser._id, courseId);
       dispatch(unenrollFromCourse({ userId: currentUser._id, courseId }));
       await fetchCourses(); // Refresh courses after unenrollment
     } catch (error) {
