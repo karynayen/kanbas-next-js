@@ -22,7 +22,7 @@ export default function CoursesLayout({ children }: { children: ReactNode }) {
     currentUser?.role === 'FACULTY' ||
     enrollments.some(
       (enrollment: any) =>
-        enrollment.user === currentUser?._id && enrollment.course === cid
+        enrollment.user === currentUser?._id && enrollment.course._id === cid
     );
 
   useEffect(() => {

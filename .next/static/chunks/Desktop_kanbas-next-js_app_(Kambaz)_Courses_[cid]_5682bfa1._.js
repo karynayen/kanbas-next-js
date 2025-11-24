@@ -140,7 +140,7 @@ function CoursesLayout(param) {
     }["CoursesLayout.useSelector"]);
     const course = courses.find((course)=>course._id === cid);
     const [showNavigation, setShowNavigation] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const isEnrolled = (currentUser === null || currentUser === void 0 ? void 0 : currentUser.role) === 'FACULTY' || enrollments.some((enrollment)=>enrollment.user === (currentUser === null || currentUser === void 0 ? void 0 : currentUser._id) && enrollment.course === cid);
+    const isEnrolled = (currentUser === null || currentUser === void 0 ? void 0 : currentUser.role) === 'FACULTY' || enrollments.some((enrollment)=>enrollment.user === (currentUser === null || currentUser === void 0 ? void 0 : currentUser._id) && enrollment.course._id === cid);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CoursesLayout.useEffect": ()=>{
             // Set initial state based on screen size (show on medium+ screens by default)
