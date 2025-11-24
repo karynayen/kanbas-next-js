@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
-import PeopleTable from '../../Courses/[cid]/People/Table';
+import PeopleTable from '../../Courses/[cid]/People/page';
 import * as client from '../client';
 import { FormControl } from 'react-bootstrap';
 import { FaPlus } from 'react-icons/fa6';
@@ -45,6 +45,7 @@ export default function Users() {
 
   const { uid } = useParams();
   const fetchUsers = async () => {
+    console.log('fetching users HEELO');
     const users = await client.findAllUsers();
     setUsers(users);
   };

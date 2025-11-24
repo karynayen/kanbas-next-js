@@ -20,7 +20,7 @@ export default function CourseNavigation({ cid }: { cid: string }) {
       {links.map((link, index) => (
         <Link
           key={link + index}
-          href={`/Courses/${cid}/${link}` + (link === 'People' ? '/Table' : '')}
+          href={`/Courses/${cid}/${link}`}
           className={`list-group-item border-0 ${
             pathname.includes(`/Courses/${cid}/${link}`)
               ? 'active'

@@ -5,7 +5,8 @@ import { FaUserCircle } from 'react-icons/fa';
 import { useParams } from 'next/navigation';
 import PeopleDetails from './Details';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import * as client from '../../client';
 
 export default function PeopleTable({
   users = [],
@@ -14,8 +15,28 @@ export default function PeopleTable({
   users?: any[];
   fetchUsers: () => void;
 }) {
+  const [currentUsers, setCurrentUsers] = useState<any[]>(users);
   const [showDetails, setShowDetails] = useState(false);
   const [showUserId, setShowUserId] = useState<string | null>(null);
+  const { cid } = useParams();
+
+  const fetchUsersForCourse = async () => {
+    const enrolledUsers = await client.findUsersForCourse(cid as string);
+    setCurrentUsers(enrolledUsers);
+  };
+
+  useEffect(() => {
+    if (users && users.length > 0) {
+      setCurrentUsers(users);
+    }
+  }, [users]);
+
+  useEffect(() => {
+    if (!fetchUsers) {
+      fetchUsersForCourse();
+    }
+  }, [cid]);
+
   return (
     <div id="wd-people-table">
       {showDetails && (
@@ -23,7 +44,7 @@ export default function PeopleTable({
           uid={showUserId}
           onClose={() => {
             setShowDetails(false);
-            fetchUsers();
+            fetchUsers(); // TODO does this need to be different
           }}
         />
       )}
@@ -40,7 +61,7 @@ export default function PeopleTable({
           </tr>
         </thead>
         <tbody>
-          {users.map((user: any) => (
+          {currentUsers.map((user: any) => (
             <tr key={user._id}>
               <td className="wd-full-name text-nowrap">
                 <span
