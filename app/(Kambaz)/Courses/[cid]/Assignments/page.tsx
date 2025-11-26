@@ -47,6 +47,8 @@ interface Assignment {
 
 export default function Assignments() {
   const { cid } = useParams();
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
+  const isStudent = currentUser?.role === 'STUDENT';
   const dispatch = useDispatch();
   const fetchAssignments = async () => {
     const assignments = await client.findAssignmentsForCourse(cid as string);
@@ -91,32 +93,36 @@ export default function Assignments() {
             />
           </InputGroup>
         </div>
-        <Link href={`/Courses/${cid}/Assignments/new`}>
-          <Button
-            id="wd-add-assignment"
-            variant="danger"
-            size="lg"
-            className="float-end ms-2 text-nowrap border wd-header-action"
-          >
-            <FaPlus
-              className="me-2 position-relative"
-              style={{ bottom: '1px' }}
-            />
-            Assignment
-          </Button>
-        </Link>
-        <Button
-          id="wd-add-assignment-group"
-          variant="secondary"
-          size="lg"
-          className="float-end text-nowrap border wd-header-action"
-        >
-          <FaPlus
-            className="me-2 position-relative"
-            style={{ bottom: '1px' }}
-          />
-          Group
-        </Button>
+        {!isStudent && (
+          <>
+            <Link href={`/Courses/${cid}/Assignments/new`}>
+              <Button
+                id="wd-add-assignment"
+                variant="danger"
+                size="lg"
+                className="float-end ms-2 text-nowrap border wd-header-action"
+              >
+                <FaPlus
+                  className="me-2 position-relative"
+                  style={{ bottom: '1px' }}
+                />
+                Assignment
+              </Button>
+            </Link>
+            <Button
+              id="wd-add-assignment-group"
+              variant="secondary"
+              size="lg"
+              className="float-end text-nowrap border wd-header-action"
+            >
+              <FaPlus
+                className="me-2 position-relative"
+                style={{ bottom: '1px' }}
+              />
+              Group
+            </Button>
+          </>
+        )}
       </div>
 
       <div className="d-flex align-items-center justify-content-between mt-4 mb-0 p-3 ps-2 wd-assignments-header">
@@ -166,11 +172,13 @@ export default function Assignments() {
               </div>
             </div>
             <div className="ms-2 d-flex align-items-center">
-              <FaTrash
-                className="text-danger me-2"
-                style={{ cursor: 'pointer' }}
-                onClick={() => handleDelete(assignment._id, assignment.title)}
-              />
+              {!isStudent && (
+                <FaTrash
+                  className="text-danger me-2"
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => handleDelete(assignment._id, assignment.title)}
+                />
+              )}
               <GreenCheckmark />
               <BsThreeDotsVertical className="ms-2 text-secondary" />
             </div>

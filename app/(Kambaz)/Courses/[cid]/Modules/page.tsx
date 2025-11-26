@@ -25,7 +25,11 @@ export default function Modules() {
   const [moduleName, setModuleName] = useState('');
   const { modules } = useSelector((state: any) => state.modulesReducer);
 
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
+
   const dispatch = useDispatch();
+
+  const isFaculty = currentUser?.role === 'FACULTY';
 
   const onCreateModuleForCourse = async () => {
     if (!cid) return;
@@ -58,11 +62,16 @@ export default function Modules() {
 
   return (
     <div>
-      <ModulesControls
-        setModuleName={setModuleName}
-        moduleName={moduleName}
-        addModule={onCreateModuleForCourse}
-      />
+      {isFaculty && (
+        <ModulesControls
+          setModuleName={setModuleName}
+          moduleName={moduleName}
+          addModule={() => {
+            dispatch(addModule({ name: moduleName, course: cid }));
+            setModuleName('');
+          }}
+        />
+      )}
       <br />
       <br />
       <br />
@@ -90,11 +99,13 @@ export default function Modules() {
                   defaultValue={module.name}
                 />
               )}
-              <ModuleControlButtons
-                moduleId={module._id}
-                deleteModule={(moduleId) => onRemoveModule(moduleId)}
-                editModule={(moduleId) => dispatch(editModule(moduleId))}
-              />
+              {isFaculty && (
+                <ModuleControlButtons
+                  moduleId={module._id}
+                  deleteModule={() => dispatch(deleteModule(module._id))}
+                  editModule={(moduleId) => dispatch(editModule(moduleId))}
+                />
+              )}
             </div>
             {module.lessons && (
               <ListGroup className="wd-lessons rounded-0">
