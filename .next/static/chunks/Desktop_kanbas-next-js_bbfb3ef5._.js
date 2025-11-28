@@ -47,7 +47,9 @@ function Profile() {
         "Profile.useEffect": ()=>{
             fetchProfile();
         }
-    }["Profile.useEffect"], []);
+    }["Profile.useEffect"], [
+        currentUser
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "wd-profile-screen",
         children: [
@@ -159,6 +161,7 @@ function Profile() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                         className: "form-control mb-2",
                         id: "wd-role",
+                        value: profile.role,
                         onChange: (e)=>setProfile({
                                 ...profile,
                                 role: e.target.value
@@ -169,7 +172,7 @@ function Profile() {
                                 children: "User"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Profile/page.tsx",
-                                lineNumber: 98,
+                                lineNumber: 99,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -177,7 +180,7 @@ function Profile() {
                                 children: "Admin"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Profile/page.tsx",
-                                lineNumber: 99,
+                                lineNumber: 100,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$kanbas$2d$next$2d$js$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -185,7 +188,7 @@ function Profile() {
                                 children: "Faculty"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Profile/page.tsx",
-                                lineNumber: 100,
+                                lineNumber: 101,
                                 columnNumber: 13
                             }, this),
                             ' ',
@@ -194,7 +197,7 @@ function Profile() {
                                 children: "Student"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Profile/page.tsx",
-                                lineNumber: 101,
+                                lineNumber: 102,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -210,7 +213,7 @@ function Profile() {
                         children: "Sign out"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/kanbas-next-js/app/(Kambaz)/Account/Profile/page.tsx",
-                        lineNumber: 103,
+                        lineNumber: 104,
                         columnNumber: 11
                     }, this)
                 ]
