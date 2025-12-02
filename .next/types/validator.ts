@@ -114,6 +114,36 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   handler satisfies AppPageConfig<"/Courses/[cid]/Piazza">
 }
 
+// Validate ../../app/(Kambaz)/Courses/[cid]/Quizzes/[qid]/Attempt/[attemptId]/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Courses/[cid]/Quizzes/[qid]/Attempt/[attemptId]/page.js")
+  handler satisfies AppPageConfig<"/Courses/[cid]/Quizzes/[qid]/Attempt/[attemptId]">
+}
+
+// Validate ../../app/(Kambaz)/Courses/[cid]/Quizzes/[qid]/Editor/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Courses/[cid]/Quizzes/[qid]/Editor/page.js")
+  handler satisfies AppPageConfig<"/Courses/[cid]/Quizzes/[qid]/Editor">
+}
+
+// Validate ../../app/(Kambaz)/Courses/[cid]/Quizzes/[qid]/Preview/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Courses/[cid]/Quizzes/[qid]/Preview/page.js")
+  handler satisfies AppPageConfig<"/Courses/[cid]/Quizzes/[qid]/Preview">
+}
+
+// Validate ../../app/(Kambaz)/Courses/[cid]/Quizzes/[qid]/Take/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Courses/[cid]/Quizzes/[qid]/Take/page.js")
+  handler satisfies AppPageConfig<"/Courses/[cid]/Quizzes/[qid]/Take">
+}
+
+// Validate ../../app/(Kambaz)/Courses/[cid]/Quizzes/[qid]/page.tsx
+{
+  const handler = {} as typeof import("../../app/(Kambaz)/Courses/[cid]/Quizzes/[qid]/page.js")
+  handler satisfies AppPageConfig<"/Courses/[cid]/Quizzes/[qid]">
+}
+
 // Validate ../../app/(Kambaz)/Courses/[cid]/Quizzes/page.tsx
 {
   const handler = {} as typeof import("../../app/(Kambaz)/Courses/[cid]/Quizzes/page.js")
