@@ -123,10 +123,13 @@ export default function QuizPreview() {
   return (
     <div className="d-flex">
       {/* Main Quiz Area */}
-      <div className="flex-grow-1 p-3" style={{ maxWidth: 'calc(100% - 250px)' }}>
+      <div
+        className="flex-grow-1 p-3"
+        style={{ maxWidth: 'calc(100% - 250px)' }}
+      >
         <Alert variant="info" className="mb-3">
-          <strong>Quiz Preview</strong> - This is a preview of the published version of the quiz.
-          Answers are NOT saved.
+          <strong>Quiz Preview</strong> - This is a preview of the published
+          version of the quiz. Answers are NOT saved.
         </Alert>
 
         <h3>{quiz.title}</h3>
@@ -150,23 +153,25 @@ export default function QuizPreview() {
                 {/* Multiple Choice */}
                 {currentQuestion.questionType === 'Multiple Choice' && (
                   <div>
-                    {currentQuestion.choices?.map((choice: any, idx: number) => (
-                      <Form.Check
-                        key={idx}
-                        type="radio"
-                        id={`choice-${currentQuestion._id}-${idx}`}
-                        name={`question-${currentQuestion._id}`}
-                        label={choice.text || `Option ${idx + 1}`}
-                        checked={answers[currentQuestion._id] === idx}
-                        onChange={() =>
-                          setAnswers({
-                            ...answers,
-                            [currentQuestion._id]: idx,
-                          })
-                        }
-                        className="mb-2"
-                      />
-                    ))}
+                    {currentQuestion.choices?.map(
+                      (choice: any, idx: number) => (
+                        <Form.Check
+                          key={idx}
+                          type="radio"
+                          id={`choice-${currentQuestion._id}-${idx}`}
+                          name={`question-${currentQuestion._id}`}
+                          label={choice.text || `Option ${idx + 1}`}
+                          checked={answers[currentQuestion._id] === idx}
+                          onChange={() =>
+                            setAnswers({
+                              ...answers,
+                              [currentQuestion._id]: idx,
+                            })
+                          }
+                          className="mb-2"
+                        />
+                      )
+                    )}
                   </div>
                 )}
 
@@ -224,7 +229,9 @@ export default function QuizPreview() {
               <Button
                 variant="secondary"
                 disabled={currentQuestionIndex === 0}
-                onClick={() => setCurrentQuestionIndex(currentQuestionIndex - 1)}
+                onClick={() =>
+                  setCurrentQuestionIndex(currentQuestionIndex - 1)
+                }
               >
                 ← Previous
               </Button>
@@ -235,7 +242,9 @@ export default function QuizPreview() {
               ) : (
                 <Button
                   variant="primary"
-                  onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}
+                  onClick={() =>
+                    setCurrentQuestionIndex(currentQuestionIndex + 1)
+                  }
                 >
                   Next →
                 </Button>
@@ -258,10 +267,16 @@ export default function QuizPreview() {
               return (
                 <Card
                   key={q._id}
-                  className={`mb-3 ${isCorrect ? 'border-success' : 'border-danger'}`}
+                  className={`mb-3 ${
+                    isCorrect ? 'border-success' : 'border-danger'
+                  }`}
                 >
                   <Card.Header
-                    className={`d-flex justify-content-between ${isCorrect ? 'bg-success text-white' : 'bg-danger text-white'}`}
+                    className={`d-flex justify-content-between ${
+                      isCorrect
+                        ? 'bg-success text-white'
+                        : 'bg-danger text-white'
+                    }`}
                   >
                     <span>Question {idx + 1}</span>
                     <span>{isCorrect ? '✓ Correct' : '✗ Incorrect'}</span>
@@ -274,12 +289,12 @@ export default function QuizPreview() {
                       {q.questionType === 'Multiple Choice'
                         ? q.choices[answers[q._id]]?.text || 'No answer'
                         : q.questionType === 'True/False'
-                          ? answers[q._id] === true
-                            ? 'True'
-                            : answers[q._id] === false
-                              ? 'False'
-                              : 'No answer'
-                          : answers[q._id] || 'No answer'}
+                        ? answers[q._id] === true
+                          ? 'True'
+                          : answers[q._id] === false
+                          ? 'False'
+                          : 'No answer'
+                        : answers[q._id] || 'No answer'}
                     </p>
                     {!isCorrect && (
                       <p className="text-success">
@@ -287,10 +302,10 @@ export default function QuizPreview() {
                         {q.questionType === 'Multiple Choice'
                           ? q.choices.find((c: any) => c.isCorrect)?.text
                           : q.questionType === 'True/False'
-                            ? q.correctAnswer
-                              ? 'True'
-                              : 'False'
-                            : q.correctAnswers?.join(' or ')}
+                          ? q.correctAnswer
+                            ? 'True'
+                            : 'False'
+                          : q.correctAnswers?.join(' or ')}
                       </p>
                     )}
                   </Card.Body>
@@ -340,7 +355,11 @@ export default function QuizPreview() {
                 <span className="text-success">✓</span>
               )}
               {showResults && (
-                <span className={getAnswerStatus(q._id) ? 'text-success' : 'text-danger'}>
+                <span
+                  className={
+                    getAnswerStatus(q._id) ? 'text-success' : 'text-danger'
+                  }
+                >
                   {getAnswerStatus(q._id) ? '✓' : '✗'}
                 </span>
               )}
@@ -351,4 +370,3 @@ export default function QuizPreview() {
     </div>
   );
 }
-

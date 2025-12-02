@@ -1,8 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 19, "column": 0}, "map": {"version":3,"sources":["file:///Users/kyen/Desktop/kanbas-next-js/app/Labs/Lab5/EnvironmentVariables.tsx"],"sourcesContent":["const HTTP_SERVER = process.env.NEXT_PUBLIC_HTTP_SERVER;\nexport default function EnvironmentVariables() {\n  return (\n    <div id=\"wd-environment-variables\">\n      <h3>Environment Variables</h3>\n      <p>Remote Server: {HTTP_SERVER}</p>\n      <hr />\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAAA,MAAM;AACS,SAAS;IACtB,qBACE,8OAAC;QAAI,IAAG;;0BACN,8OAAC;0BAAG;;;;;;0BACJ,8OAAC;;oBAAE;oBAAgB;;;;;;;0BACnB,8OAAC;;;;;;;;;;;AAGP","debugId":null}},
-    {"offset": {"line": 63, "column": 0}, "map": {"version":3,"sources":["file:///Users/kyen/Desktop/kanbas-next-js/app/Labs/Lab5/page.tsx"],"sourcesContent":["import EnvironmentVariables from './EnvironmentVariables';\nconst HTTP_SERVER = process.env.NEXT_PUBLIC_HTTP_SERVER;\n\nexport default function Lab5() {\n  return (\n    <div id=\"wd-lab5\">\n      <h2>Lab 5</h2>\n      <div className=\"list-group\">\n        <a href={`${HTTP_SERVER}/lab5/welcome`} className=\"list-group-item\">\n          Welcome\n        </a>\n      </div>\n      <hr />\n      <EnvironmentVariables />\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;;AACA,MAAM;AAES,SAAS;IACtB,qBACE,8OAAC;QAAI,IAAG;;0BACN,8OAAC;0BAAG;;;;;;0BACJ,8OAAC;gBAAI,WAAU;0BACb,cAAA,8OAAC;oBAAE,MAAM,GAAG,YAAY,aAAa,CAAC;oBAAE,WAAU;8BAAkB;;;;;;;;;;;0BAItE,8OAAC;;;;;0BACD,8OAAC,uJAAoB;;;;;;;;;;;AAG3B","debugId":null}}]
-}

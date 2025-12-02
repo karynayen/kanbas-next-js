@@ -1,5 +1,5 @@
 'use client';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 export default function HelloRedux() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { message } = useSelector((state: any) => state.helloReducer);

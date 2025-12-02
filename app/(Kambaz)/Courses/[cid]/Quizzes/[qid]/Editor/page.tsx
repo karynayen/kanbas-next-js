@@ -27,24 +27,7 @@ export default function QuizEditor() {
   const [activeTab, setActiveTab] = useState('details');
   const [loading, setLoading] = useState(true);
 
-  // Redirect students away from editor
-  useEffect(() => {
-    if (currentUser?.role === 'STUDENT') {
-      router.push(`/Courses/${cid}/Quizzes/${qid}`);
-    }
-  }, [currentUser, cid, qid, router]);
-
-  if (currentUser?.role === 'STUDENT') {
-    return (
-      <div className="p-4">
-        <Alert variant="danger">
-          You do not have permission to edit quizzes.
-        </Alert>
-      </div>
-    );
-  }
-
-  // Quiz form fields
+  // Quiz form fields - all hooks must be called before any conditional returns
   const [title, setTitle] = useState('New Quiz');
   const [description, setDescription] = useState('');
   const [quizType, setQuizType] = useState('Graded Quiz');
@@ -69,6 +52,13 @@ export default function QuizEditor() {
   const [editingQuestionId, setEditingQuestionId] = useState<string | null>(
     null
   );
+
+  // Redirect students away from editor
+  useEffect(() => {
+    if (currentUser?.role === 'STUDENT') {
+      router.push(`/Courses/${cid}/Quizzes/${qid}`);
+    }
+  }, [currentUser, cid, qid, router]);
 
   useEffect(() => {
     const fetchQuiz = async () => {
@@ -104,6 +94,17 @@ export default function QuizEditor() {
     };
     fetchQuiz();
   }, [qid]);
+
+  // Check student permission after all hooks
+  if (currentUser?.role === 'STUDENT') {
+    return (
+      <div className="p-4">
+        <Alert variant="danger">
+          You do not have permission to edit quizzes.
+        </Alert>
+      </div>
+    );
+  }
 
   const totalPoints = questions.reduce((sum, q) => sum + (q.points || 0), 0);
 

@@ -21,7 +21,9 @@ export default function QuestionPreview({
       <Card.Header className="d-flex justify-content-between align-items-center bg-light">
         <div>
           <span className="fw-bold">Question {questionNumber}</span>
-          <span className="badge bg-secondary ms-2">{question.questionType}</span>
+          <span className="badge bg-secondary ms-2">
+            {question.questionType}
+          </span>
         </div>
         <div className="d-flex align-items-center">
           <span className="me-3">{question.points} pts</span>
@@ -54,7 +56,9 @@ export default function QuestionPreview({
             {question.choices.map((choice: any, idx: number) => (
               <li
                 key={idx}
-                className={`mb-1 ${choice.isCorrect ? 'text-success fw-bold' : ''}`}
+                className={`mb-1 ${
+                  choice.isCorrect ? 'text-success fw-bold' : ''
+                }`}
               >
                 {choice.isCorrect ? '✓ ' : '○ '}
                 {choice.text || `Option ${idx + 1}`}
@@ -85,4 +89,3 @@ export default function QuestionPreview({
     </Card>
   );
 }
-

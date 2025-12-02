@@ -51,7 +51,8 @@ export default function AttemptResults() {
   }
 
   const totalPoints = questions.reduce((sum, q) => sum + (q.points || 0), 0);
-  const percentage = totalPoints > 0 ? Math.round((attempt.score / totalPoints) * 100) : 0;
+  const percentage =
+    totalPoints > 0 ? Math.round((attempt.score / totalPoints) * 100) : 0;
   const passed = percentage >= 70;
 
   // Helper to get student's answer for a question
@@ -125,7 +126,9 @@ export default function AttemptResults() {
       <Card className={`mb-4 ${passed ? 'border-success' : 'border-warning'}`}>
         <Card.Body className="text-center py-4">
           <h3>Your Score</h3>
-          <p className={`display-4 ${passed ? 'text-success' : 'text-warning'}`}>
+          <p
+            className={`display-4 ${passed ? 'text-success' : 'text-warning'}`}
+          >
             {attempt.score} / {totalPoints}
           </p>
           <Badge bg={passed ? 'success' : 'warning'} className="fs-5 px-4 py-2">
@@ -186,14 +189,17 @@ export default function AttemptResults() {
 
               {showCorrect && !isCorrect && (
                 <p className="text-success">
-                  <strong>Correct Answer:</strong> {formatCorrectAnswer(question)}
+                  <strong>Correct Answer:</strong>{' '}
+                  {formatCorrectAnswer(question)}
                 </p>
               )}
 
               {/* Show all choices for multiple choice */}
               {question.questionType === 'Multiple Choice' && showCorrect && (
                 <div className="mt-3">
-                  <p className="mb-2"><strong>All Choices:</strong></p>
+                  <p className="mb-2">
+                    <strong>All Choices:</strong>
+                  </p>
                   <ul className="list-unstyled">
                     {question.choices?.map((choice: any, cidx: number) => {
                       const wasSelected = answerRecord?.answer === cidx;
@@ -204,8 +210,8 @@ export default function AttemptResults() {
                             choice.isCorrect
                               ? 'text-success fw-bold'
                               : wasSelected
-                                ? 'text-danger'
-                                : ''
+                              ? 'text-danger'
+                              : ''
                           }`}
                         >
                           {choice.isCorrect && '✓ '}
@@ -242,4 +248,3 @@ export default function AttemptResults() {
     </div>
   );
 }
-

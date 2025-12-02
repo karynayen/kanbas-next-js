@@ -1,1 +1,304 @@
-{"version":3,"caseSensitive":false,"basePath":"","rewrites":{"beforeFiles":[],"afterFiles":[],"fallback":[]},"redirects":[{"source":"/:path+/","destination":"/:path+","permanent":true,"internal":true,"regex":"^(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))\\/$"}],"headers":[]}
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/Courses/[cid]",
+      "regex": "^/Courses/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Assignments",
+      "regex": "^/Courses/([^/]+?)/Assignments(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Assignments(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Assignments/[aid]",
+      "regex": "^/Courses/([^/]+?)/Assignments/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid",
+        "nxtPaid": "nxtPaid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Assignments/(?<nxtPaid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Grades",
+      "regex": "^/Courses/([^/]+?)/Grades(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Grades(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Home",
+      "regex": "^/Courses/([^/]+?)/Home(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Home(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Modules",
+      "regex": "^/Courses/([^/]+?)/Modules(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Modules(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/People",
+      "regex": "^/Courses/([^/]+?)/People(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/People(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Piazza",
+      "regex": "^/Courses/([^/]+?)/Piazza(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Piazza(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Quizzes",
+      "regex": "^/Courses/([^/]+?)/Quizzes(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Quizzes(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Quizzes/[qid]",
+      "regex": "^/Courses/([^/]+?)/Quizzes/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid",
+        "nxtPqid": "nxtPqid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Quizzes/(?<nxtPqid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Quizzes/[qid]/Attempt/[attemptId]",
+      "regex": "^/Courses/([^/]+?)/Quizzes/([^/]+?)/Attempt/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid",
+        "nxtPqid": "nxtPqid",
+        "nxtPattemptId": "nxtPattemptId"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Quizzes/(?<nxtPqid>[^/]+?)/Attempt/(?<nxtPattemptId>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Quizzes/[qid]/Editor",
+      "regex": "^/Courses/([^/]+?)/Quizzes/([^/]+?)/Editor(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid",
+        "nxtPqid": "nxtPqid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Quizzes/(?<nxtPqid>[^/]+?)/Editor(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Quizzes/[qid]/Preview",
+      "regex": "^/Courses/([^/]+?)/Quizzes/([^/]+?)/Preview(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid",
+        "nxtPqid": "nxtPqid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Quizzes/(?<nxtPqid>[^/]+?)/Preview(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Quizzes/[qid]/Take",
+      "regex": "^/Courses/([^/]+?)/Quizzes/([^/]+?)/Take(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid",
+        "nxtPqid": "nxtPqid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Quizzes/(?<nxtPqid>[^/]+?)/Take(?:/)?$"
+    },
+    {
+      "page": "/Courses/[cid]/Zoom",
+      "regex": "^/Courses/([^/]+?)/Zoom(?:/)?$",
+      "routeKeys": {
+        "nxtPcid": "nxtPcid"
+      },
+      "namedRegex": "^/Courses/(?<nxtPcid>[^/]+?)/Zoom(?:/)?$"
+    },
+    {
+      "page": "/Labs/Lab3/add/[a]/[b]",
+      "regex": "^/Labs/Lab3/add/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPa": "nxtPa",
+        "nxtPb": "nxtPb"
+      },
+      "namedRegex": "^/Labs/Lab3/add/(?<nxtPa>[^/]+?)/(?<nxtPb>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/Account",
+      "regex": "^/Account(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Account(?:/)?$"
+    },
+    {
+      "page": "/Account/Profile",
+      "regex": "^/Account/Profile(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Account/Profile(?:/)?$"
+    },
+    {
+      "page": "/Account/Signin",
+      "regex": "^/Account/Signin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Account/Signin(?:/)?$"
+    },
+    {
+      "page": "/Account/Signup",
+      "regex": "^/Account/Signup(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Account/Signup(?:/)?$"
+    },
+    {
+      "page": "/Account/Users",
+      "regex": "^/Account/Users(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Account/Users(?:/)?$"
+    },
+    {
+      "page": "/Calendar",
+      "regex": "^/Calendar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Calendar(?:/)?$"
+    },
+    {
+      "page": "/Dashboard",
+      "regex": "^/Dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Dashboard(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/Inbox",
+      "regex": "^/Inbox(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Inbox(?:/)?$"
+    },
+    {
+      "page": "/Labs",
+      "regex": "^/Labs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Labs(?:/)?$"
+    },
+    {
+      "page": "/Labs/Lab1",
+      "regex": "^/Labs/Lab1(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Labs/Lab1(?:/)?$"
+    },
+    {
+      "page": "/Labs/Lab2",
+      "regex": "^/Labs/Lab2(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Labs/Lab2(?:/)?$"
+    },
+    {
+      "page": "/Labs/Lab3",
+      "regex": "^/Labs/Lab3(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Labs/Lab3(?:/)?$"
+    },
+    {
+      "page": "/Labs/Lab4",
+      "regex": "^/Labs/Lab4(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Labs/Lab4(?:/)?$"
+    },
+    {
+      "page": "/Labs/Lab4/ReduxExamples",
+      "regex": "^/Labs/Lab4/ReduxExamples(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Labs/Lab4/ReduxExamples(?:/)?$"
+    },
+    {
+      "page": "/Labs/Lab4/ReduxExamples/AddRedux",
+      "regex": "^/Labs/Lab4/ReduxExamples/AddRedux(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Labs/Lab4/ReduxExamples/AddRedux(?:/)?$"
+    },
+    {
+      "page": "/Labs/Lab4/ReduxExamples/CounterRedux",
+      "regex": "^/Labs/Lab4/ReduxExamples/CounterRedux(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Labs/Lab4/ReduxExamples/CounterRedux(?:/)?$"
+    },
+    {
+      "page": "/Labs/Lab4/ReduxExamples/HelloRedux",
+      "regex": "^/Labs/Lab4/ReduxExamples/HelloRedux(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Labs/Lab4/ReduxExamples/HelloRedux(?:/)?$"
+    },
+    {
+      "page": "/Labs/Lab5",
+      "regex": "^/Labs/Lab5(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Labs/Lab5(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

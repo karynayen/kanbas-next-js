@@ -60,7 +60,9 @@ export default function QuestionEditor({
       updatedQuestion.choices = undefined;
       updatedQuestion.correctAnswers = undefined;
     } else if (questionType === 'Fill in the Blank') {
-      updatedQuestion.correctAnswers = correctAnswers.filter((a) => a.trim() !== '');
+      updatedQuestion.correctAnswers = correctAnswers.filter(
+        (a) => a.trim() !== ''
+      );
       updatedQuestion.choices = undefined;
       updatedQuestion.correctAnswer = undefined;
     }
@@ -109,9 +111,7 @@ export default function QuestionEditor({
   };
 
   const handleAnswerChange = (index: number, value: string) => {
-    setCorrectAnswers(
-      correctAnswers.map((a, i) => (i === index ? value : a))
-    );
+    setCorrectAnswers(correctAnswers.map((a, i) => (i === index ? value : a)));
   };
 
   return (
@@ -172,10 +172,7 @@ export default function QuestionEditor({
               <strong>Answers:</strong>
             </Form.Label>
             {choices.map((choice: any, idx: number) => (
-              <div
-                key={idx}
-                className="d-flex align-items-center gap-2 mb-2"
-              >
+              <div key={idx} className="d-flex align-items-center gap-2 mb-2">
                 <Form.Check
                   type="radio"
                   name={`correctAnswer-${question._id}`}
@@ -294,4 +291,3 @@ export default function QuestionEditor({
     </Card>
   );
 }
-

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 19, "column": 0}, "map": {"version":3,"sources":["file:///Users/kyen/Desktop/kanbas-next-js/app/Labs/Lab5/page.tsx"],"sourcesContent":["export default function Lab5() {\n  return (\n    <div id=\"wd-lab5\">\n      <h2>Lab 5</h2>\n      <div className=\"list-group\">\n        <a\n          href=\"http://localhost:4000/lab5/welcome\"\n          className=\"list-group-item\"\n        >\n          Welcome\n        </a>\n      </div>\n      <hr />\n      <EnvironmentVariables />\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;QAAI,IAAG;;0BACN,8OAAC;0BAAG;;;;;;0BACJ,8OAAC;gBAAI,WAAU;0BACb,cAAA,8OAAC;oBACC,MAAK;oBACL,WAAU;8BACX;;;;;;;;;;;0BAIH,8OAAC;;;;;0BACD,8OAAC;;;;;;;;;;;AAGP","debugId":null}}]
-}

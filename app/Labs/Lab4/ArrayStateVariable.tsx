@@ -27,7 +27,7 @@ export default function ArrayStateVariable() {
       </ul>
       <hr />
       <ListGroup>
-        {todos.map((todo: { id: string; title: string }, index: number) => (
+        {todos.map((todo: { id: string; title: string }) => (
           <ListGroupItem key={todo.id}>{todo.title}</ListGroupItem>
         ))}
       </ListGroup>

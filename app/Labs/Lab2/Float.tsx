@@ -6,24 +6,28 @@ export default function Float() {
         <img
           className="wd-float-right"
           src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
+          alt="Starship float example"
         />
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius hic ...
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius hic ...
         <img
           className="wd-float-left"
           src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
+          alt="Starship float example"
         />
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius hic ...
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius hic ...
         <img
           className="wd-float-right"
           src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
+          alt="Starship float example"
         />
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius hic ...
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius hic ...
         <img
           className="wd-float-left"
           src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
+          alt="Starship float example"
         />
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius hic ...
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius hic ...
@@ -44,6 +48,7 @@ export default function Float() {
           <img
             className="wd-float-right"
             src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
+            alt="Starship float example"
           />
           <div className="wd-float-done"></div>
         </div>
