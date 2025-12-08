@@ -1,0 +1,3 @@
+module.exports=[56927,a=>{"use strict";a.s(["default",()=>e]);var b=a.i(43929),c=a.i(30801),d=a.i(7685);function e(){let{count:a}=(0,c.useSelector)(a=>a.counterReducer),e=(0,c.useDispatch)();return(0,b.jsxs)("div",{id:"wd-counter-redux",children:[(0,b.jsx)("h2",{children:"Counter Redux"}),(0,b.jsx)("h3",{children:a}),(0,b.jsxs)("button",{onClick:()=>e((0,d.increment)()),id:"wd-counter-redux-increment-click",children:[" ","Increment"," "]}),(0,b.jsxs)("button",{onClick:()=>e((0,d.decrement)()),id:"wd-counter-redux-decrement-click",children:[" ","Decrement"," "]}),(0,b.jsx)("hr",{})]})}}];
+
+//# sourceMappingURL=8150b_kanbas-next-js_app_Labs_Lab4_ReduxExamples_CounterRedux_page_tsx_fbca84bf._.js.map

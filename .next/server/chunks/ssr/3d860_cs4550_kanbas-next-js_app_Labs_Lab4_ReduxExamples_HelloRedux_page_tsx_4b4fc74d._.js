@@ -1,0 +1,3 @@
+module.exports=[84589,a=>{"use strict";a.s(["default",()=>d]);var b=a.i(43929),c=a.i(30801);function d(){let{message:a}=(0,c.useSelector)(a=>a.helloReducer);return(0,b.jsxs)("div",{id:"wd-hello-redux",children:[(0,b.jsx)("h3",{children:"Hello Redux"}),(0,b.jsx)("h4",{children:a})," ",(0,b.jsx)("hr",{})]})}}];
+
+//# sourceMappingURL=3d860_cs4550_kanbas-next-js_app_Labs_Lab4_ReduxExamples_HelloRedux_page_tsx_4b4fc74d._.js.map

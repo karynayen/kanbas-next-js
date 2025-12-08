@@ -1,0 +1,20 @@
+{
+  "pages": {
+    "/Labs/Lab4/ReduxExamples/CounterRedux/page": [
+      "static/chunks/317480ef56192e0a.js",
+      "static/chunks/f403cc36d67c1e9d.js",
+      "static/chunks/2473c16c0c2f6b5f.css",
+      "static/chunks/a87916f933b8012c.css",
+      "static/chunks/ed7444bcce55e6d2.js",
+      "static/chunks/db2141cd5fdc7f37.js",
+      "static/chunks/c435239f7dfece02.js",
+      "static/chunks/2ca16a7b5a413783.js",
+      "static/chunks/d7234c3e445f426f.js",
+      "static/chunks/50d42043a8edd6fb.js",
+      "static/chunks/f0df16e7127fecb1.js",
+      "static/chunks/239169753b4866d7.js",
+      "static/chunks/11ff01ea51f6f81a.js",
+      "static/chunks/turbopack-782bc17a1b912c06.js"
+    ]
+  }
+}

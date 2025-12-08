@@ -1,0 +1,27 @@
+{
+  "pages": {
+    "/(Kambaz)/Courses/[cid]/People/page": [
+      "static/chunks/317480ef56192e0a.js",
+      "static/chunks/f403cc36d67c1e9d.js",
+      "static/chunks/2473c16c0c2f6b5f.css",
+      "static/chunks/a87916f933b8012c.css",
+      "static/chunks/a03caa63901839a1.js",
+      "static/chunks/5e7744d9cefef957.js",
+      "static/chunks/d5f691b0f04c4937.js",
+      "static/chunks/447c9b7569afc740.js",
+      "static/chunks/62f92e7b6c3aaa89.js",
+      "static/chunks/23ce6539de8df8be.js",
+      "static/chunks/c435239f7dfece02.js",
+      "static/chunks/0fc007f89d7d3548.css",
+      "static/chunks/73c52b2eeac6cd51.js",
+      "static/chunks/09645ab5de2407ec.js",
+      "static/chunks/f4af2bc17ba5567d.js",
+      "static/chunks/d7234c3e445f426f.js",
+      "static/chunks/50d42043a8edd6fb.js",
+      "static/chunks/f0df16e7127fecb1.js",
+      "static/chunks/239169753b4866d7.js",
+      "static/chunks/11ff01ea51f6f81a.js",
+      "static/chunks/turbopack-782bc17a1b912c06.js"
+    ]
+  }
+}

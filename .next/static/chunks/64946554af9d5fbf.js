@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,35925,e=>{"use strict";e.s(["default",()=>s]);var t=e.i(28148),r=e.i(67048);function s(){let{a:e,b:s}=(0,r.useParams)();return(0,t.jsxs)("div",{id:"wd-add",children:[" ",(0,t.jsx)("h4",{children:"Add Path Parameters"}),e," + ",s," = ",parseInt(e)+parseInt(s)]})}}]);

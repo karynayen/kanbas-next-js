@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,49678,e=>{"use strict";e.s(["default",()=>i]);var c=e.i(6585),t=e.i(68987);function i(){let{currentUser:e}=(0,c.useSelector)(e=>e.accountReducer);e?(0,t.redirect)("/Account/Profile"):(0,t.redirect)("/Account/Signin")}}]);
