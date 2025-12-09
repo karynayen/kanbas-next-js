@@ -22,7 +22,11 @@ import {
   updateCourse,
   setCourses,
 } from '../Courses/reducer';
-import { enrollInCourse, unenrollFromCourse } from '../Database/reducer';
+import {
+  enrollInCourse,
+  setEnrollments,
+  unenrollFromCourse,
+} from '../Database/reducer';
 
 export default function Dashboard() {
   const { currentUser } = useSelector((state: any) => state.accountReducer);
@@ -31,6 +35,20 @@ export default function Dashboard() {
 
   const dispatch = useDispatch();
   const [showAllCourses, setShowAllCourses] = useState(false);
+
+  const fetchEnrollments = async () => {
+    if (!currentUser) return;
+    const enrollments = await enrollmentClient.findEnrollmentsForUser(
+      currentUser._id
+    );
+    dispatch(setEnrollments(enrollments));
+  };
+
+  useEffect(() => {
+    if (currentUser) {
+      fetchEnrollments();
+    }
+  }, [currentUser]);
 
   const fetchCourses = async () => {
     try {
