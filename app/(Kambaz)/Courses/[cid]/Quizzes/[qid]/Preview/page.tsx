@@ -125,7 +125,6 @@ export default function QuizPreview() {
       {/* Main Quiz Area */}
       <div
         className="flex-grow-1 p-3"
-        style={{ maxWidth: 'calc(100% - 250px)' }}
       >
         <Alert variant="info" className="mb-3">
           <strong>Quiz Preview</strong> - This is a preview of the published
